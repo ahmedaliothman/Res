@@ -1,0 +1,190 @@
+/*############################################################################### Embedd Fonts #######################################################################################*/
+
+/*  AdvertisingExtraBold font converted using font-converter.net. thank you! */
+
+@font-face {
+	font-family: "advertising-extra-bold";
+	src: url("advertising-extra-bold/AdvertisingExtraBoldRegular.eot");
+	/* IE9 Compat Modes */
+	src: url("advertising-extra-bold/AdvertisingExtraBoldRegular.eot?#iefix") format("embedded-opentype"),
+		url("advertising-extra-bold/AdvertisingExtraBoldRegular.otf") format("opentype"),
+		url("advertising-extra-bold/AdvertisingExtraBoldRegular.svg") format("svg"),
+		url("advertising-extra-bold/AdvertisingExtraBoldRegular.ttf") format("truetype"),
+		url("advertising-extra-bold/AdvertisingExtraBoldRegular.woff") format("woff"),
+		url("advertising-extra-bold/AdvertisingExtraBoldRegular.woff2") format("woff2");
+	/* Modern Browsers */
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* AdvertisingBold font converted using font-converter.net. thank you! */
+
+@font-face {
+	font-family: "advertising-bold";
+	src: url("advertising-Bold/AdvertisingBoldRegular.eot");
+	/* IE9 Compat Modes */
+	src: url("advertising-Bold/AdvertisingBoldRegular.eot?#iefix") format("embedded-opentype"),
+		url("advertising-Bold/AdvertisingBoldRegular.otf") format("opentype"),
+		url("advertising-Bold/AdvertisingBoldRegular.svg") format("svg"),
+		url("advertising-Bold/AdvertisingBoldRegular.ttf") format("truetype"),
+		url("advertising-Bold/AdvertisingBoldRegular.woff") format("woff"),
+		url("advertising-Bold/AdvertisingBoldRegular.woff2") format("woff2");
+	/* Modern Browsers */
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* ShorooqN1 font converted using font-converter.net. thank you! */
+
+@font-face {
+	font-family: "shorooq";
+	src: url("shorooq/ShorooqN1Regular.eot");
+	/* IE9 Compat Modes */
+	src: url("shorooq/ShorooqN1Regular.eot?#iefix") format("embedded-opentype"),
+		url("shorooq/ShorooqN1Regular.otf") format("opentype"), url("shorooq/ShorooqN1Regular.svg") format("svg"),
+		url("shorooq/ShorooqN1Regular.ttf") format("truetype"), url("shorooq/ShorooqN1Regular.woff") format("woff"),
+		url("shorooq/ShorooqN1Regular.woff2") format("woff2");
+	/* Modern Browsers */
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* BoutrosNewsH1 font converted using font-converter.net. thank you! */
+
+@font-face {
+	font-family: "botros";
+	src: url("botros/BoutrosNewsH1-Bold.eot");
+	/* IE9 Compat Modes */
+	src: url("botros/BoutrosNewsH1-Bold.eot?#iefix") format("embedded-opentype"),
+		url("botros/BoutrosNewsH1-Bold.otf") format("opentype"), url("botros/BoutrosNewsH1-Bold.svg") format("svg"),
+		url("botros/BoutrosNewsH1-Bold.ttf") format("truetype"), url("botros/BoutrosNewsH1-Bold.woff") format("woff"),
+		url("botros/BoutrosNewsH1-Bold.woff2") format("woff2");
+	/* Modern Browsers */
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* KhebratMusamimBold font converted using font-converter.net. thank you! */
+
+@font-face {
+	font-family: "musamim-Bold";
+	src: url("musamim-bold/MusamimBold.eot");
+	/* IE9 Compat Modes */
+	src: url("musamim-bold/MusamimBold.eot?#iefix") format("embedded-opentype"),
+		url("musamim-bold/MusamimBold.otf") format("opentype"), url("musamim-bold/MusamimBold.svg") format("svg"),
+		url("musamim-bold/MusamimBold.ttf") format("truetype"), url("musamim-bold/MusamimBold.woff") format("woff"),
+		url("musamim-bold/MusamimBold.woff2") format("woff2");
+	/* Modern Browsers */
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Noor-Bold font converted using font-converter.net. thank you! */
+@font-face {
+	font-family: "noor-Bold";
+	src: url("noor-Bold/ArbFONTS-AGCBold.eot"); /* IE9 Compat Modes */
+	src: url("noor-Bold/ArbFONTS-AGCBold.eot?#iefix") format("embedded-opentype"),
+		url("noor-Bold/ArbFONTS-AGCBold.otf") format("opentype"), url("noor-Bold/ArbFONTS-AGCBold.svg") format("svg"),
+		url("noor-Bold/ArbFONTS-AGCBold.ttf") format("truetype"), url("noor-Bold/ArbFONTS-AGCBold.woff") format("woff"),
+		url("noor-Bold/ArbFONTS-AGCBold.woff2") format("woff2"); /* Modern Browsers */
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Noor-Regular font converted using font-converter.net. thank you! */
+@font-face {
+	font-family: "noor";
+	src: url("noor/ArbFONTS-AGCRegular.eot"); /* IE9 Compat Modes */
+	src: url("noor/ArbFONTS-AGCRegular.eot?#iefix") format("embedded-opentype"),
+		url("noor/ArbFONTS-AGCRegular.otf") format("opentype"), url("noor/ArbFONTS-AGCRegular.svg") format("svg"),
+		url("noor/ArbFONTS-AGCRegular.ttf") format("truetype"), url("noor/ArbFONTS-AGCRegular.woff") format("woff"),
+		url("noor/ArbFONTS-AGCRegular.woff2") format("woff2"); /* Modern Browsers */
+	font-weight: normal;
+	font-style: normal;
+}
+
+/*#####################web fonts ########################################*/
+
+@font-face {
+	font-family: "naskh";
+	src: url("webfonts/DroidArabicNaskh.eot");
+	src: url("webfonts/DroidArabicNaskh.eot?#iefix") format("embedded-opentype"),
+		url("webfonts/DroidArabicNaskh.woff2") format("woff2"), url("webfonts/DroidArabicNaskh.woff") format("woff"),
+		url("webfonts/DroidArabicNaskh.svg#DroidArabicNaskh") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "kufi-bold";
+	src: url("webfonts/DroidArabicKufi-Bold.eot");
+	src: url("webfonts/DroidArabicKufi-Bold.eot?#iefix") format("embedded-opentype"),
+		url("webfonts/DroidArabicKufi-Bold.woff") format("woff"),
+		url("webfonts/DroidArabicKufi-Bold.svg#DroidArabicKufi-Bold") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+/*################# converter fonts ############################*/
+
+.advertising-extra-bold {
+	font-family: advertising-extra-bold;
+	line-height: 30px;
+}
+
+.advertising-extra-bold h1,
+h2,
+h3,
+h4,
+h4 {
+	line-height: 50px !important;
+}
+
+.advertising-bold {
+	font-family: advertising-bold;
+	line-height: 30px;
+}
+
+.advertising-bold h1,
+h2,
+h3,
+h4,
+h4 {
+	line-height: 50px !important;
+}
+
+.shorooq {
+	font-family: shorooq;
+	/* font-size: 18px; */
+}
+
+.botros {
+	font-family: botros;
+}
+
+.musamim-Bold {
+	font-family: musamim-Bold;
+}
+
+.noor-Bold {
+	font-family: noor-Bold;
+}
+
+.noor {
+	font-family: noor;
+	line-height: 28px;
+}
+
+/*################# webfonts ############################*/
+
+.naskh {
+	font-family: naskh;
+	font-size: 15px !important;
+	line-height: 30px;
+}
+
+.kufi-Bold {
+	font-family: kufi-bold;
+}
+
+/*######################################################################################################################################################################*/

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>D:\Publish\الاقامات</_PublishTargetUrl>
+    <History>True|2021-11-30T12:08:01.5584009Z;True|2021-11-30T13:04:43.4455328+03:00;True|2021-11-30T09:34:14.2929354+03:00;True|2021-11-16T13:53:57.2733314+03:00;True|2021-11-09T10:56:16.5506722+03:00;True|2021-11-07T20:30:58.9186088+03:00;True|2021-10-24T14:30:29.4899512+03:00;True|2021-10-24T11:22:11.0407202+03:00;True|2021-09-13T10:26:42.9828130+03:00;True|2021-09-13T08:39:45.5138614+03:00;True|2021-09-06T09:00:26.9708226+03:00;True|2021-09-06T08:55:23.9356604+03:00;True|2021-09-06T08:41:32.4915391+03:00;True|2021-09-05T09:05:06.5119292+03:00;True|2021-09-05T08:58:34.5781579+03:00;True|2021-09-05T08:52:33.0891129+03:00;True|2021-09-05T08:41:08.8820097+03:00;True|2021-08-01T09:07:51.8371099+03:00;True|2021-08-01T08:49:02.6441783+03:00;</History>
+  </PropertyGroup>
+</Project>

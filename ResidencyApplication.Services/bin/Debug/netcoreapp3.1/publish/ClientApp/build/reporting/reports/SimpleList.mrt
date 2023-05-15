@@ -1,0 +1,407 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="1">
+      <Res Ref="2" type="Stimulsoft.Report.Dictionary.StiSqlDatabase" isKey="true">
+        <Alias>Res</Alias>
+        <ConnectionStringEncrypted>9Hr1C9cIAZniX9XMTgCiXtFU84nGXTGJ4hno8GkBpEbUWrPLS1vz9W9G+QR5AfZ/yXD3rU1RWRnoQaDcwwCgaoE6aY1hGEOkRxsh8cQNYXvDYFODW1mT3WJGjdx37GInw3jZK0h7QvXiWuj4Z2wiG8RgcwlPW9PwaFs=</ConnectionStringEncrypted>
+        <Key>c6c3cbd876a1412f82b9c601aeae34a4</Key>
+        <Name>Res</Name>
+      </Res>
+    </Databases>
+    <DataSources isList="true" count="4">
+      <Employee_View Ref="3" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>Employee_View</Alias>
+        <Columns isList="true" count="17">
+          <value>UserId,System.Int32</value>
+          <value>Email,System.String</value>
+          <value>IsSapUser,System.Boolean</value>
+          <value>NationalityId,System.String</value>
+          <value>UserName,System.String</value>
+          <value>valid,System.String</value>
+          <value>statusMessage,System.String</value>
+          <value>SectionId,System.Int32</value>
+          <value>JobtypeId,System.Int32</value>
+          <value>UserTypeId,System.Int32</value>
+          <value>EmployeeNumber,System.Int32</value>
+          <value>UserRoleId,System.Int32</value>
+          <value>CivilId,System.String</value>
+          <value>EmployeeName,System.String</value>
+          <value>IsActive,System.Boolean</value>
+          <value>MobileNumber,System.String</value>
+          <value>CivilIdSerialNumber,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>eee18193334c495eb655b67be3ae44a5</Key>
+        <Name>Employee_View</Name>
+        <NameInSource>Res</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from Employee_View where UserRoleId=3</SqlCommand>
+      </Employee_View>
+      <V_CountAssignedApplications Ref="4" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>V_CountAssignedApplications</Alias>
+        <Columns isList="true" count="2">
+          <value>ORIGINAL,Employee,Employee,Employee,System.String,_x0033_ff1fc75943747b3bb6e9c942f041bfd</value>
+          <value>ORIGINAL,NotAssigned,NotAssigned,NotAssigned,System.Int32,_x0039_dabfab81a904a8ab4013d88ffcc5f7e</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>f5b5620e5c8a4306819d9b9d1ad2bee3</Key>
+        <Name>V_CountAssignedApplications</Name>
+        <NameInSource>Res</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from V_CountAssignedApplications</SqlCommand>
+      </V_CountAssignedApplications>
+      <V_DetailedAssignedApplications Ref="5" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>V_DetailedAssignedApplications</Alias>
+        <Columns isList="true" count="10">
+          <value>ORIGINAL,EmployeeName,EmployeeName,EmployeeName,System.String,b3ef432b5a224257b2baa7eb65499c26</value>
+          <value>ORIGINAL,ApplicationNumber,ApplicationNumber,ApplicationNumber,System.String,_x0035_648f8ecf2b04e81b15d9672288fd850</value>
+          <value>ORIGINAL,ApplicantName,ApplicantName,ApplicantName,System.String,fcbbe4bed00146abb328632ad0304cc6</value>
+          <value>ORIGINAL,ApplicantId,ApplicantId,ApplicantId,System.Int32,bfb848162ccf4ea0b1b873185c17643b</value>
+          <value>ORIGINAL,ApplicationStatusName,ApplicationStatusName,ApplicationStatusName,System.String,_x0036_d16d5bae6c544429f08cb6ee68e4ad8</value>
+          <value>ORIGINAL,ApplicationStatusId,ApplicationStatusId,ApplicationStatusId,System.Int32,bc888ca4fdc5484b9d73dc540234a030</value>
+          <value>ORIGINAL,ApplicationTypeName,ApplicationTypeName,ApplicationTypeName,System.String,d317ac831cc44cbb8098cc4d850dcc43</value>
+          <value>ORIGINAL,ApplicationTypeId,ApplicationTypeId,ApplicationTypeId,System.Int32,_x0037_3790f73517b434fb0890b5f55bd23d5</value>
+          <value>ORIGINAL,ApplicationDate,ApplicationDate,ApplicationDate,System.DateTime,_x0031_d3f21b78cda47bd97fa60e14bae68f5</value>
+          <value>ORIGINAL,EmployeeId,EmployeeId,EmployeeId,System.Int32,_x0034_2006989a0e24fd7addb9e8caa310ac1</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>ea78f22fedb444f58b91335b2b3073f3</Key>
+        <Name>V_DetailedAssignedApplications</Name>
+        <NameInSource>Res</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from V_DetailedAssignedApplications</SqlCommand>
+      </V_DetailedAssignedApplications>
+      <V_UserApplication Ref="6" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>V_UserApplication</Alias>
+        <Columns isList="true" count="13">
+          <value>ORIGINAL,Email,Email,Email,System.String,_x0030_37cd14dc19d4c0899bca8ac032f8086</value>
+          <value>ORIGINAL,EmployeeNumber,EmployeeNumber,EmployeeNumber,System.Int64,_x0039_660ababd92f4320aa3b9aa8c8e8c747</value>
+          <value>ORIGINAL,ApplicationNumber,ApplicationNumber,ApplicationNumber,System.Int32,_x0033_7e941b909f0420493fd55463043486d</value>
+          <value>ORIGINAL,UserId,UserId,UserId,System.Int32,_x0038_98586cf38f044bf970fbeacb23a0caf</value>
+          <value>ORIGINAL,EmployeeNameArabic,EmployeeNameArabic,EmployeeNameArabic,System.String,_x0038_1b44b6474f7420094c773e6208ebd40</value>
+          <value>ORIGINAL,MobileNumber,MobileNumber,MobileNumber,System.String,_x0037_cde3a134d014369b653a46da6b0ddf1</value>
+          <value>ORIGINAL,BirthDate,BirthDate,BirthDate,System.DateTime,ac893626b3df4811838d93e3a933377b</value>
+          <value>ORIGINAL,EmployeeNameEnglish,EmployeeNameEnglish,EmployeeNameEnglish,System.String,_x0036_f84c03ca359418da3e8621e132e9bf1</value>
+          <value>ORIGINAL,Department,Department,Department,System.String,_x0039_fc434d183ce4139a37655441a7ba685</value>
+          <value>ORIGINAL,JobTitle,JobTitle,JobTitle,System.String,a40390f11aeb406eb153174e3e3b3bbc</value>
+          <value>ORIGINAL,Remark,Remark,Remark,System.String,b3760558794442fa9635fb566e36e94b</value>
+          <value>ORIGINAL,ApplicationStatusId,ApplicationStatusId,ApplicationStatusId,System.Int32,d8c2a4c3891b46f5a73736dd84474518</value>
+          <value>ORIGINAL,ApplicationTypeId,ApplicationTypeId,ApplicationTypeId,System.Int32,_x0030_096ff597ab54b4e94c088e32a1e1ac7</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>c425fee1d0a1490f8beadb373e855049</Key>
+        <Name>V_UserApplication</Name>
+        <NameInSource>Res</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from V_UserApplication</SqlCommand>
+      </V_UserApplication>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Resources isList="true" count="0" />
+    <Variables isList="true" count="2">
+      <value>,DateFrom,DateFrom,,System.Nullable`1[System.DateTime],,False,False,True,False,_x003C__x003F_xml_x0020_version_x003D__x0022_1.0_x0022__x0020_encoding_x003D__x0022_utf-16_x0022__x0020_standalone_x003D__x0022_yes_x0022__x003F__x003E__x003C_StiSerializer_x0020_version_x003D__x0022_1.02_x0022__x0020_type_x003D__x0022_Net_x0022__x0020_application_x003D__x0022_State_x0022__x003E__x003C_SortDirection_x003E_None_x003C__x002F_SortDirection_x003E__x003C_ItemsInitializationType_x003E_Columns_x003C__x002F_ItemsInitializationType_x003E__x003C_BindingVariable_x0020_isNull_x003D__x0022_true_x0022__x0020__x002F__x003E__x003C_Keys_x0020_isList_x003D__x0022_true_x0022__x0020_count_x003D__x0022_0_x0022__x0020__x002F__x003E__x003C_Values_x0020_isList_x003D__x0022_true_x0022__x0020_count_x003D__x0022_0_x0022__x0020__x002F__x003E__x003C_CheckedStates_x0020_isList_x003D__x0022_true_x0022__x0020_count_x003D__x0022_0_x0022__x0020__x002F__x003E__x003C__x002F_StiSerializer_x003E_,_x0034_c19a723704f45e49fd901d67f2569ac</value>
+      <value>,DateTo,DateTo,,System.Nullable`1[System.DateTime],,False,False,True,False,_x003C__x003F_xml_x0020_version_x003D__x0022_1.0_x0022__x0020_encoding_x003D__x0022_utf-16_x0022__x0020_standalone_x003D__x0022_yes_x0022__x003F__x003E__x003C_StiSerializer_x0020_version_x003D__x0022_1.02_x0022__x0020_type_x003D__x0022_Net_x0022__x0020_application_x003D__x0022_State_x0022__x003E__x003C_SortDirection_x003E_None_x003C__x002F_SortDirection_x003E__x003C_ItemsInitializationType_x003E_Columns_x003C__x002F_ItemsInitializationType_x003E__x003C_BindingVariable_x0020_isNull_x003D__x0022_true_x0022__x0020__x002F__x003E__x003C_Keys_x0020_isList_x003D__x0022_true_x0022__x0020_count_x003D__x0022_0_x0022__x0020__x002F__x003E__x003C_Values_x0020_isList_x003D__x0022_true_x0022__x0020_count_x003D__x0022_0_x0022__x0020__x002F__x003E__x003C_CheckedStates_x0020_isList_x003D__x0022_true_x0022__x0020_count_x003D__x0022_0_x0022__x0020__x002F__x003E__x003C__x002F_StiSerializer_x003E_,_x0032_8fef9dbef684ba187bed5f69d62198f</value>
+    </Variables>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <Key>d10f81e237d54f76bc63f01d64d7a4f6</Key>
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="7" type="Page" isKey="true">
+      <Border>None;[255:255:255];2;Solid;False;4;EmptyBrush</Border>
+      <Brush>Transparent</Brush>
+      <ColumnWidth>10</ColumnWidth>
+      <Components isList="true" count="3">
+        <PageFooterBand1 Ref="8" type="PageFooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,7.19,10.91,0.3</ClientRectangle>
+          <Components isList="true" count="0" />
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>PageFooterBand1</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+        </PageFooterBand1>
+        <ReportTitleBand2 Ref="9" type="ReportTitleBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.2,10.91,0.9</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text2 Ref="10" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.5,0.3,3.5,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,20,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text2</Name>
+              <Page isRef="7" />
+              <Parent isRef="9" />
+              <Text>التقارير والاحصائات</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text2>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>ReportTitleBand2</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+        </ReportTitleBand2>
+        <CrossTab1 Ref="11" type="Stimulsoft.Report.CrossTab.StiCrossTab" isKey="true">
+          <Brush>Transparent</Brush>
+          <CanBreak>True</CanBreak>
+          <ClientRectangle>0.5,2.2,10,1.8</ClientRectangle>
+          <Components isList="true" count="8">
+            <CrossTab1_RowTotal1 Ref="12" type="CrossRowTotal" isKey="true">
+              <Border>All;[155:155:155];1;Solid;False;4;Black</Border>
+              <Brush>[127:127:127]</Brush>
+              <ClientRectangle>0,0.94,3,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,14,Bold</Font>
+              <Guid>3eb106118c2845609c01d739e644d9f9</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>CrossTab1_RowTotal1</Name>
+              <Page isRef="7" />
+              <Parent isRef="11" />
+              <Restrictions>AllowMove, AllowResize, AllowSelect, AllowChange</Restrictions>
+              <Text>المجموع</Text>
+              <TextBrush>[255:255:255]</TextBrush>
+            </CrossTab1_RowTotal1>
+            <CrossTab1_Row1_Title Ref="13" type="CrossTitle" isKey="true">
+              <Border>All;[155:155:155];1;Solid;False;4;Black</Border>
+              <Brush>[84:141:212]</Brush>
+              <ClientRectangle>0,0.32,3,0.3</ClientRectangle>
+              <Expressions isList="true" count="0" />
+              <Font>Arial,14,Bold</Font>
+              <Guid>a3b936ad8dc14d90bb3a13305c6e6915</Guid>
+              <Margins>0,0,0,0</Margins>
+              <MinSize>2,0</MinSize>
+              <Name>CrossTab1_Row1_Title</Name>
+              <Page isRef="7" />
+              <Parent isRef="11" />
+              <Restrictions>AllowMove, AllowResize, AllowSelect, AllowChange</Restrictions>
+              <Text>اسم الموظف</Text>
+              <TextBrush>[105:105:105]</TextBrush>
+              <TypeOfComponent>Row:CrossTab1_Row1</TypeOfComponent>
+            </CrossTab1_Row1_Title>
+            <CrossTab1_ColTotal1 Ref="14" type="CrossColumnTotal" isKey="true">
+              <Border>All;[155:155:155];1;Solid;False;4;Black</Border>
+              <Brush>[127:127:127]</Brush>
+              <ClientRectangle>5.12,0.32,0.6,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,14,Bold</Font>
+              <Guid>e058a6c0daa7496aab4e7a2d1039e25a</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>CrossTab1_ColTotal1</Name>
+              <Page isRef="7" />
+              <Parent isRef="11" />
+              <Restrictions>AllowMove, AllowResize, AllowSelect, AllowChange</Restrictions>
+              <Text>المجموع</Text>
+              <TextBrush>[255:255:255]</TextBrush>
+            </CrossTab1_ColTotal1>
+            <CrossTab1_LeftTitle Ref="15" type="CrossTitle" isKey="true">
+              <Border>All;[155:155:155];1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>0,0,7,0.3</ClientRectangle>
+              <Expressions isList="true" count="0" />
+              <Font>Arial,14,Bold</Font>
+              <Guid>dad27f918eee4775a359e1fcebdef8fb</Guid>
+              <Margins>0,0,0,0</Margins>
+              <MinSize>4,0</MinSize>
+              <Name>CrossTab1_LeftTitle</Name>
+              <Page isRef="7" />
+              <Parent isRef="11" />
+              <Restrictions>AllowMove, AllowResize, AllowSelect, AllowChange</Restrictions>
+              <Text>تقرير مجمع للمعاملات وانواعها </Text>
+              <TextBrush>[105:105:105]</TextBrush>
+              <TypeOfComponent>LeftTitle</TypeOfComponent>
+            </CrossTab1_LeftTitle>
+            <CrossTab1_RightTitle Ref="16" type="CrossTitle" isKey="true">
+              <Border>All;[155:155:155];1;Solid;False;4;Black</Border>
+              <Brush>[84:141:212]</Brush>
+              <ClientRectangle>3.02,0,2.7,0.3</ClientRectangle>
+              <Expressions isList="true" count="0" />
+              <Font>Arial,14,Bold</Font>
+              <Guid>a86f992db31a41ac95d7123c3e87a1ad</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>CrossTab1_RightTitle</Name>
+              <Page isRef="7" />
+              <Parent isRef="11" />
+              <Restrictions>AllowMove, AllowResize, AllowSelect, AllowChange</Restrictions>
+              <Text>نوع المعاملة</Text>
+              <TextBrush>[105:105:105]</TextBrush>
+              <TypeOfComponent>RightTitle</TypeOfComponent>
+            </CrossTab1_RightTitle>
+            <CrossTab1_Row1 Ref="17" type="CrossRow" isKey="true">
+              <Alias>EmployeeName</Alias>
+              <Border>All;[155:155:155];1;Solid;False;4;Black</Border>
+              <Brush>[198:217:240]</Brush>
+              <ClientRectangle>0,0.64,3,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <DisplayValue>{V_DetailedAssignedApplications.EmployeeName}</DisplayValue>
+              <Expressions isList="true" count="0" />
+              <Font>Arial,14,Bold</Font>
+              <Guid>49d8288791844c128e45fadd0750c08c</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>CrossTab1_Row1</Name>
+              <Page isRef="7" />
+              <Parent isRef="11" />
+              <Restrictions>AllowMove, AllowResize, AllowSelect, AllowChange</Restrictions>
+              <Text>EmployeeName</Text>
+              <TextBrush>[105:105:105]</TextBrush>
+              <TotalGuid>3eb106118c2845609c01d739e644d9f9</TotalGuid>
+              <Value>{V_DetailedAssignedApplications.EmployeeName}</Value>
+            </CrossTab1_Row1>
+            <CrossTab1_Column1 Ref="18" type="CrossColumn" isKey="true">
+              <Alias>ApplicationTypeName</Alias>
+              <Border>All;[155:155:155];1;Solid;False;4;Black</Border>
+              <Brush>[198:217:240]</Brush>
+              <ClientRectangle>3.02,0.32,2.1,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <DisplayValue>{V_DetailedAssignedApplications.ApplicationTypeName}</DisplayValue>
+              <Expressions isList="true" count="0" />
+              <Font>Arial,14,Bold</Font>
+              <Guid>92fba184ebc449928662a6832e74291c</Guid>
+              <Margins>0,0,0,0</Margins>
+              <MinSize>1,0</MinSize>
+              <Name>CrossTab1_Column1</Name>
+              <Page isRef="7" />
+              <Parent isRef="11" />
+              <Restrictions>AllowMove, AllowResize, AllowSelect, AllowChange</Restrictions>
+              <Text>ApplicationTypeName</Text>
+              <TextBrush>[105:105:105]</TextBrush>
+              <TotalGuid>e058a6c0daa7496aab4e7a2d1039e25a</TotalGuid>
+              <Value>{V_DetailedAssignedApplications.ApplicationTypeName}</Value>
+            </CrossTab1_Column1>
+            <CrossTab1_Sum1 Ref="19" type="CrossSummary" isKey="true">
+              <Alias>ApplicationNumber</Alias>
+              <Border>All;[155:155:155];1;Solid;False;4;Black</Border>
+              <Brush>[255:255:255]</Brush>
+              <ClientRectangle>3.02,0.64,2.1,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,14</Font>
+              <Guid>890a9c2976dd40fa94f9accc0b6c55b0</Guid>
+              <HideZeros>False</HideZeros>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>CrossTab1_Sum1</Name>
+              <Page isRef="7" />
+              <Parent isRef="11" />
+              <Restrictions>AllowMove, AllowResize, AllowSelect, AllowChange</Restrictions>
+              <Summary>Count</Summary>
+              <Text>0</Text>
+              <TextBrush>Black</TextBrush>
+              <Value>{V_DetailedAssignedApplications.ApplicationNumber}</Value>
+            </CrossTab1_Sum1>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <CrossTabStyleIndex>-1</CrossTabStyleIndex>
+          <DataRelationName />
+          <DataSourceName>V_DetailedAssignedApplications</DataSourceName>
+          <EmptyValue>لايوجد</EmptyValue>
+          <Expressions isList="true" count="0" />
+          <Filters isList="true" count="2">
+            <value>_x007B_V_DetailedAssignedApplications.ApplicationDate_x003E__x003D_DateFrom_x007D_</value>
+            <value>_x007B_V_DetailedAssignedApplications.ApplicationDate_x003C__x003D_DateTo_x007D_</value>
+          </Filters>
+          <Name>CrossTab1</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <RightToLeft>True</RightToLeft>
+          <Sort isList="true" count="0" />
+        </CrossTab1>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Expressions isList="true" count="0" />
+      <Guid>921ce7ee98444a7dbbb9d8f21e5b7a38</Guid>
+      <Margins>0.39,0.39,0.39,0.39</Margins>
+      <MirrorMargins>True</MirrorMargins>
+      <Name>Page1</Name>
+      <Orientation>Landscape</Orientation>
+      <PageHeight>8.27</PageHeight>
+      <PageWidth>11.69</PageWidth>
+      <PaperSize>A4</PaperSize>
+      <Report isRef="0" />
+      <RightToLeft>True</RightToLeft>
+    </Page1>
+  </Pages>
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>11/30/2021 12:19:21 PM</ReportChanged>
+  <ReportCreated>11/28/2021 11:31:13 AM</ReportCreated>
+  <ReportFile>C:\Users\629812\Desktop\Report.mrt</ReportFile>
+  <ReportGuid>6b1940df8ce541aab96c5a1ba9c7ee47</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Inches</ReportUnit>
+  <ReportVersion>2021.4.4.0</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="1">
+    <Style1 Ref="20" type="Stimulsoft.Report.StiCrossTabStyle" isKey="true">
+      <AlternatingCellBackColor>238, 238, 238</AlternatingCellBackColor>
+      <AlternatingCellForeColor>50, 58, 69</AlternatingCellForeColor>
+      <BackColor>Transparent</BackColor>
+      <CellBackColor>White</CellBackColor>
+      <CellForeColor>50, 58, 69</CellForeColor>
+      <ColumnHeaderBackColor>35, 159, 217</ColumnHeaderBackColor>
+      <ColumnHeaderForeColor>White</ColumnHeaderForeColor>
+      <Conditions isList="true" count="0" />
+      <HotColumnHeaderBackColor>22, 122, 189</HotColumnHeaderBackColor>
+      <HotRowHeaderBackColor>22, 122, 189</HotRowHeaderBackColor>
+      <LineColor>White</LineColor>
+      <Name>Style1</Name>
+      <RowHeaderBackColor>35, 159, 217</RowHeaderBackColor>
+      <RowHeaderForeColor>238, 238, 238</RowHeaderForeColor>
+      <SelectedCellBackColor>82, 182, 249</SelectedCellBackColor>
+      <SelectedCellForeColor>White</SelectedCellForeColor>
+      <TotalCellColumnBackColor>35, 159, 217</TotalCellColumnBackColor>
+      <TotalCellColumnForeColor>White</TotalCellColumnForeColor>
+      <TotalCellRowBackColor>35, 159, 217</TotalCellRowBackColor>
+      <TotalCellRowForeColor>238, 238, 238</TotalCellRowForeColor>
+    </Style1>
+  </Styles>
+</StiSerializer>

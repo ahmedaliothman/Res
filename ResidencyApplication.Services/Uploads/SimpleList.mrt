@@ -1,0 +1,966 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="1">
+      <Res Ref="2" type="Stimulsoft.Report.Dictionary.StiSqlDatabase" isKey="true">
+        <Alias>Res</Alias>
+        <ConnectionStringEncrypted>9Hr1C9cIAZniX9XMTgCiXtFU84nGXTGJ4hno8GkBpEbUWrPLS1vz9W9G+QR5AfZ/yXD3rU1RWRnoQaDcwwCgaoE6aY1hGEOkRxsh8cQNYXvDYFODW1mT3WJGjdx37GInw3jZK0h7QvXiWuj4Z2wiG8RgcwlPW9PwaFs=</ConnectionStringEncrypted>
+        <Key>c6c3cbd876a1412f82b9c601aeae34a4</Key>
+        <Name>Res</Name>
+      </Res>
+    </Databases>
+    <DataSources isList="true" count="4">
+      <Employee_View Ref="3" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>Employee_View</Alias>
+        <Columns isList="true" count="18">
+          <value>ORIGINAL,UserId,UserId,UserId,System.Int32,_x0030_753f67db56c45e8a9195a84ab17b838</value>
+          <value>ORIGINAL,Email,Email,Email,System.String,eff0e9b5c7874ab0bc3530a4836ac2c1</value>
+          <value>ORIGINAL,IsSapUser,IsSapUser,IsSapUser,System.Boolean,cd14ba52ccd146cba6fe7cc39345b743</value>
+          <value>ORIGINAL,NationalityId,NationalityId,NationalityId,System.String,_x0036_b4449bd6e1b45e492768898f7a968fb</value>
+          <value>ORIGINAL,UserName,UserName,UserName,System.String,cb62699d42ab4e5dbe6bb50f752c674c</value>
+          <value>ORIGINAL,valid,valid,valid,System.String,c69faeec825843c0875e739124cd8c19</value>
+          <value>ORIGINAL,statusMessage,statusMessage,statusMessage,System.String,_x0036_8c60db3555444488857db2248258628</value>
+          <value>ORIGINAL,SectionId,SectionId,SectionId,System.Int32,_x0030_aac875a3d5a4852a5a1c019088d6a13</value>
+          <value>ORIGINAL,JobtypeId,JobtypeId,JobtypeId,System.Int32,c70d62304e55466f967bd09981786181</value>
+          <value>ORIGINAL,UserTypeId,UserTypeId,UserTypeId,System.Int32,e4d94030c1e24827a1d7427288f6b0a2</value>
+          <value>ORIGINAL,EmployeeNumber,EmployeeNumber,EmployeeNumber,System.Int32,e5335765a0e34042aaf5d977abeeb81f</value>
+          <value>ORIGINAL,UserRoleId,UserRoleId,UserRoleId,System.Int32,e01830c607ca4504abbe4840618fc422</value>
+          <value>ORIGINAL,CivilId,CivilId,CivilId,System.String,e6183a75bd18451a9ca8e0263702fa95</value>
+          <value>ORIGINAL,EmployeeName,EmployeeName,EmployeeName,System.String,_x0034_77143799df4483e937b93ae3cf47240</value>
+          <value>ORIGINAL,IsActive,IsActive,IsActive,System.Boolean,de34a205a8fc4b5e86044f2fd3208e99</value>
+          <value>ORIGINAL,MobileNumber,MobileNumber,MobileNumber,System.String,c015a0b928974f2d9854f1d9565fa9f9</value>
+          <value>ORIGINAL,CivilIdSerialNumber,CivilIdSerialNumber,CivilIdSerialNumber,System.String,f1c884f58eb0403ea5859ad95287707c</value>
+          <value>ORIGINAL,asstatusMessage,asstatusMessage,asstatusMessage,System.String,aad8d33ead8b4111bafb3dc946fe2e4f</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>eee18193334c495eb655b67be3ae44a5</Key>
+        <Name>Employee_View</Name>
+        <NameInSource>Res</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>SELECT  -1 as UserId ,''as MobileNumber,''as CivilIdSerialNumber,''as Email,''as IsSapUser,''as IsActive,''as NationalityId,''as SectionId,''as JobtypeId ,'' as UserTypeId,''as EmployeeNumber,''as UserRoleId,''as CivilId,'(الكل)'as EmployeeName,'(غير موزعة)'as UserName,''as valid,''asstatusMessage
+union
+SELECT  0 as UserId ,''as MobileNumber,''as CivilIdSerialNumber,''as Email,''as IsSapUser,''as IsActive,''as NationalityId,''as SectionId,''as JobtypeId ,'' as UserTypeId,''as EmployeeNumber,''as UserRoleId,''as CivilId,'(غير موزعة)'as EmployeeName,'(غير موزعة)'as UserName,''as valid,''asstatusMessage
+union
+SELECT  UserId ,MobileNumber ,CivilIdSerialNumber,Email,IsSapUser,IsActive,NationalityId,SectionId,JobtypeId,UserTypeId,EmployeeNumber,UserRoleId,CivilId,EmployeeName,UserName,valid,statusMessage FROM [ResidencyApplication].[dbo].[Employee_View] where UserRoleId=3</SqlCommand>
+      </Employee_View>
+      <V_CountAssignedApplications Ref="4" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>V_CountAssignedApplications</Alias>
+        <Columns isList="true" count="2">
+          <value>ORIGINAL,Employee,Employee,Employee,System.String,_x0033_ff1fc75943747b3bb6e9c942f041bfd</value>
+          <value>ORIGINAL,NotAssigned,NotAssigned,NotAssigned,System.Int32,_x0039_dabfab81a904a8ab4013d88ffcc5f7e</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>f5b5620e5c8a4306819d9b9d1ad2bee3</Key>
+        <Name>V_CountAssignedApplications</Name>
+        <NameInSource>Res</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from V_CountAssignedApplications</SqlCommand>
+      </V_CountAssignedApplications>
+      <V_DetailedAssignedApplications Ref="5" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>V_DetailedAssignedApplications</Alias>
+        <Columns isList="true" count="13">
+          <value>ORIGINAL,EmployeeName,EmployeeName,EmployeeName,System.String,b3ef432b5a224257b2baa7eb65499c26</value>
+          <value>ORIGINAL,ApplicationNumber,ApplicationNumber,ApplicationNumber,System.String,_x0035_648f8ecf2b04e81b15d9672288fd850</value>
+          <value>ORIGINAL,ApplicantName,ApplicantName,ApplicantName,System.String,fcbbe4bed00146abb328632ad0304cc6</value>
+          <value>ORIGINAL,ApplicantId,ApplicantId,ApplicantId,System.Int32,bfb848162ccf4ea0b1b873185c17643b</value>
+          <value>ORIGINAL,ApplicationStatusName,ApplicationStatusName,ApplicationStatusName,System.String,_x0036_d16d5bae6c544429f08cb6ee68e4ad8</value>
+          <value>ORIGINAL,ApplicationStatusId,ApplicationStatusId,ApplicationStatusId,System.Int32,bc888ca4fdc5484b9d73dc540234a030</value>
+          <value>ORIGINAL,ApplicationTypeName,ApplicationTypeName,ApplicationTypeName,System.String,d317ac831cc44cbb8098cc4d850dcc43</value>
+          <value>ORIGINAL,ApplicationTypeId,ApplicationTypeId,ApplicationTypeId,System.Int32,_x0037_3790f73517b434fb0890b5f55bd23d5</value>
+          <value>ORIGINAL,ApplicationDate,ApplicationDate,ApplicationDate,System.DateTime,_x0031_d3f21b78cda47bd97fa60e14bae68f5</value>
+          <value>ORIGINAL,EmployeeId,EmployeeId,EmployeeId,System.Int32,_x0034_2006989a0e24fd7addb9e8caa310ac1</value>
+          <value>ORIGINAL,ApplicantCivilId,ApplicantCivilId,ApplicantCivilId,System.String,e93ba1c31d204e33bedf572dd0a6e1be</value>
+          <value>ORIGINAL,ApplicantJobTypeId,ApplicantJobTypeId,ApplicantJobTypeId,System.Int32,_x0036_0cef12d96894b33bbf734420c6801f1</value>
+          <value>ORIGINAL,ApplicantJobTypeName,ApplicantJobTypeName,ApplicantJobTypeName,System.String,ece1878fea0f4ab8a70d7bc9128fbfb3</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>ea78f22fedb444f58b91335b2b3073f3</Key>
+        <Name>V_DetailedAssignedApplications</Name>
+        <NameInSource>Res</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from V_DetailedAssignedApplications</SqlCommand>
+      </V_DetailedAssignedApplications>
+      <V_UserApplication Ref="6" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>V_UserApplication</Alias>
+        <Columns isList="true" count="13">
+          <value>ORIGINAL,Email,Email,Email,System.String,_x0030_37cd14dc19d4c0899bca8ac032f8086</value>
+          <value>ORIGINAL,EmployeeNumber,EmployeeNumber,EmployeeNumber,System.Int64,_x0039_660ababd92f4320aa3b9aa8c8e8c747</value>
+          <value>ORIGINAL,ApplicationNumber,ApplicationNumber,ApplicationNumber,System.Int32,_x0033_7e941b909f0420493fd55463043486d</value>
+          <value>ORIGINAL,UserId,UserId,UserId,System.Int32,_x0038_98586cf38f044bf970fbeacb23a0caf</value>
+          <value>ORIGINAL,EmployeeNameArabic,EmployeeNameArabic,EmployeeNameArabic,System.String,_x0038_1b44b6474f7420094c773e6208ebd40</value>
+          <value>ORIGINAL,MobileNumber,MobileNumber,MobileNumber,System.String,_x0037_cde3a134d014369b653a46da6b0ddf1</value>
+          <value>ORIGINAL,BirthDate,BirthDate,BirthDate,System.DateTime,ac893626b3df4811838d93e3a933377b</value>
+          <value>ORIGINAL,EmployeeNameEnglish,EmployeeNameEnglish,EmployeeNameEnglish,System.String,_x0036_f84c03ca359418da3e8621e132e9bf1</value>
+          <value>ORIGINAL,Department,Department,Department,System.String,_x0039_fc434d183ce4139a37655441a7ba685</value>
+          <value>ORIGINAL,JobTitle,JobTitle,JobTitle,System.String,a40390f11aeb406eb153174e3e3b3bbc</value>
+          <value>ORIGINAL,Remark,Remark,Remark,System.String,b3760558794442fa9635fb566e36e94b</value>
+          <value>ORIGINAL,ApplicationStatusId,ApplicationStatusId,ApplicationStatusId,System.Int32,d8c2a4c3891b46f5a73736dd84474518</value>
+          <value>ORIGINAL,ApplicationTypeId,ApplicationTypeId,ApplicationTypeId,System.Int32,_x0030_096ff597ab54b4e94c088e32a1e1ac7</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>c425fee1d0a1490f8beadb373e855049</Key>
+        <Name>V_UserApplication</Name>
+        <NameInSource>Res</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from V_UserApplication</SqlCommand>
+      </V_UserApplication>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Resources isList="true" count="0" />
+    <Variables isList="true" count="3">
+      <value>,DateTo,التاريخ_x0020_الى:,,System.Nullable`1[System.DateTime],,False,False,True,False,_x003C__x003F_xml_x0020_version_x003D__x0022_1.0_x0022__x0020_encoding_x003D__x0022_utf-16_x0022__x0020_standalone_x003D__x0022_yes_x0022__x003F__x003E__x003C_StiSerializer_x0020_version_x003D__x0022_1.02_x0022__x0020_type_x003D__x0022_Net_x0022__x0020_application_x003D__x0022_State_x0022__x003E__x003C_SortDirection_x003E_None_x003C__x002F_SortDirection_x003E__x003C_ItemsInitializationType_x003E_Columns_x003C__x002F_ItemsInitializationType_x003E__x003C_BindingVariable_x0020_isNull_x003D__x0022_true_x0022__x0020__x002F__x003E__x003C_Keys_x0020_isList_x003D__x0022_true_x0022__x0020_count_x003D__x0022_0_x0022__x0020__x002F__x003E__x003C_Values_x0020_isList_x003D__x0022_true_x0022__x0020_count_x003D__x0022_0_x0022__x0020__x002F__x003E__x003C_CheckedStates_x0020_isList_x003D__x0022_true_x0022__x0020_count_x003D__x0022_0_x0022__x0020__x002F__x003E__x003C__x002F_StiSerializer_x003E_,_x0032_8fef9dbef684ba187bed5f69d62198f</value>
+      <value>,DateFrom,التاريخ_x0020_من:,,System.Nullable`1[System.DateTime],,False,False,True,False,_x003C__x003F_xml_x0020_version_x003D__x0022_1.0_x0022__x0020_encoding_x003D__x0022_utf-16_x0022__x0020_standalone_x003D__x0022_yes_x0022__x003F__x003E__x003C_StiSerializer_x0020_version_x003D__x0022_1.02_x0022__x0020_type_x003D__x0022_Net_x0022__x0020_application_x003D__x0022_State_x0022__x003E__x003C_SortDirection_x003E_None_x003C__x002F_SortDirection_x003E__x003C_ItemsInitializationType_x003E_Columns_x003C__x002F_ItemsInitializationType_x003E__x003C_BindingVariable_x0020_isNull_x003D__x0022_true_x0022__x0020__x002F__x003E__x003C_Keys_x0020_isList_x003D__x0022_true_x0022__x0020_count_x003D__x0022_0_x0022__x0020__x002F__x003E__x003C_Values_x0020_isList_x003D__x0022_true_x0022__x0020_count_x003D__x0022_0_x0022__x0020__x002F__x003E__x003C_CheckedStates_x0020_isList_x003D__x0022_true_x0022__x0020_count_x003D__x0022_0_x0022__x0020__x002F__x003E__x003C__x002F_StiSerializer_x003E_,_x0034_c19a723704f45e49fd901d67f2569ac</value>
+      <value>,EmployeeId,الموظف:,,System.Int32,,False,False,True,False,_x003C__x003F_xml_x0020_version_x003D__x0022_1.0_x0022__x0020_encoding_x003D__x0022_utf-16_x0022__x0020_standalone_x003D__x0022_yes_x0022__x003F__x003E__x003C_StiSerializer_x0020_version_x003D__x0022_1.02_x0022__x0020_type_x003D__x0022_Net_x0022__x0020_application_x003D__x0022_State_x0022__x003E__x003C_ItemsInitializationType_x003E_Columns_x003C__x002F_ItemsInitializationType_x003E__x003C_KeysColumn_x003E_Employee_View.UserId_x003C__x002F_KeysColumn_x003E__x003C_ValuesColumn_x003E_Employee_View.EmployeeName_x003C__x002F_ValuesColumn_x003E__x003C_BindingVariable_x0020_isNull_x003D__x0022_true_x0022__x0020__x002F__x003E__x003C_AllowUserValues_x003E_False_x003C__x002F_AllowUserValues_x003E__x003C_Keys_x0020_isList_x003D__x0022_true_x0022__x0020_count_x003D__x0022_0_x0022__x0020__x002F__x003E__x003C_Values_x0020_isList_x003D__x0022_true_x0022__x0020_count_x003D__x0022_0_x0022__x0020__x002F__x003E__x003C_CheckedStates_x0020_isList_x003D__x0022_true_x0022__x0020_count_x003D__x0022_0_x0022__x0020__x002F__x003E__x003C__x002F_StiSerializer_x003E_,_x0036_12cffb632064b05991cd466ebaf3cec,False,First</value>
+    </Variables>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <Key>d10f81e237d54f76bc63f01d64d7a4f6</Key>
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="7" type="Page" isKey="true">
+      <Border>None;[255:255:255];2;Solid;False;4;EmptyBrush</Border>
+      <Brush>Transparent</Brush>
+      <ColumnWidth>10</ColumnWidth>
+      <Components isList="true" count="4">
+        <PageHeaderBand1 Ref="8" type="PageHeaderBand" isKey="true">
+          <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.2,11.39,0.5</ClientRectangle>
+          <Components isList="true" count="2">
+            <Text2 Ref="9" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4.2,0.1,3.5,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,20,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text2</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>تقرير تفصيلي للمعاملات</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text2>
+            <Text8 Ref="10" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.7,0.2,1.9,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text8</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>{Today} :تاريخ الاصدار</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text8>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>PageHeaderBand1</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+        </PageHeaderBand1>
+        <PageFooterBand1 Ref="11" type="PageFooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,7.57,11.39,0.3</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text7 Ref="12" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.01,2.1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text7</Name>
+              <Page isRef="7" />
+              <Parent isRef="11" />
+              <Text>{PageNumber}/{TotalPageCount}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text7>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>PageFooterBand1</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+        </PageFooterBand1>
+        <ReportTitleBand2 Ref="13" type="ReportTitleBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,1.1,11.39,0</ClientRectangle>
+          <Components isList="true" count="0" />
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>ReportTitleBand2</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+        </ReportTitleBand2>
+        <DataBand1 Ref="14" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,1.5,11.39,0.6</ClientRectangle>
+          <Components isList="true" count="6">
+            <Text6 Ref="15" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>10.2,0.3,1,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,12,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text6</Name>
+              <Page isRef="7" />
+              <Parent isRef="14" />
+              <Text>:للموظف</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,,A=0</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text6>
+            <Text9 Ref="16" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.8,0.1,0.6,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text9</Name>
+              <Page isRef="7" />
+              <Parent isRef="14" />
+              <TextBrush>Black</TextBrush>
+            </Text9>
+            <Text10 Ref="17" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.3,0.3,2.9,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,12,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text10</Name>
+              <Page isRef="7" />
+              <Parent isRef="14" />
+              <Text>{Employee_View.EmployeeName}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,RightToLeft=True,,,A=0</TextOptions>
+              <Type>DataColumn</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text10>
+            <Text3 Ref="18" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.1,0,3.7,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,12,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text3</Name>
+              <Page isRef="7" />
+              <Parent isRef="14" />
+              <Text>إلى تاريخ: {DateTo != null ? DateToStr(DateTo) : "لايوجد تحديد"}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,RightToLeft=True,,,A=0</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text3>
+            <Text1 Ref="19" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.3,0,4.3,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,12,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="7" />
+              <Parent isRef="14" />
+              <Text>من تاريخ : {DateFrom != null ? DateToStr(DateFrom) : "لايوجد تحديد"}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text1>
+            <CrossTab2 Ref="20" type="Stimulsoft.Report.CrossTab.StiCrossTab" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanBreak>True</CanBreak>
+              <ClientRectangle>0,0.6,13.5,2.2</ClientRectangle>
+              <Components isList="true" count="29">
+                <CrossTab2_RowTotal1 Ref="21" type="CrossRowTotal" isKey="true">
+                  <Border>All;[69:69:69];1;Solid;False;4;Black</Border>
+                  <Brush>[219:219:219]</Brush>
+                  <ClientRectangle>0,2.54,10.2,0.2</ClientRectangle>
+                  <ComponentStyle>CrossTab</ComponentStyle>
+                  <Conditions isList="true" count="0" />
+                  <Expressions isList="true" count="0" />
+                  <Font>Arial,11,Bold</Font>
+                  <Guid>1169e43b89764674a7f48afe112e9463</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>CrossTab2_RowTotal1</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="20" />
+                  <Restrictions>AllowMove, AllowResize, AllowSelect, AllowChange</Restrictions>
+                  <Text>إجمالي عدد  المعاملات</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                </CrossTab2_RowTotal1>
+                <CrossTab2_Row1_Title Ref="22" type="CrossTitle" isKey="true">
+                  <Border>All;[69:69:69];1;Solid;False;4;Black</Border>
+                  <Brush>DarkGray</Brush>
+                  <ClientRectangle>0,0.22,2,1.5</ClientRectangle>
+                  <ComponentStyle>CrossTab</ComponentStyle>
+                  <Expressions isList="true" count="0" />
+                  <Font>Arial,10,Bold</Font>
+                  <Guid>036b2faea65c4abfa1b9782562b1e8ff</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <MinSize>0,0.3</MinSize>
+                  <Name>CrossTab2_Row1_Title</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="20" />
+                  <Restrictions>AllowMove, AllowResize, AllowSelect, AllowChange</Restrictions>
+                  <Text>اسم الموظف</Text>
+                  <TextBrush>[19:19:19]</TextBrush>
+                  <Type>Expression</Type>
+                  <TypeOfComponent>Row:CrossTab2_Row1</TypeOfComponent>
+                </CrossTab2_Row1_Title>
+                <CrossTab2_RowTotal2 Ref="23" type="CrossRowTotal" isKey="true">
+                  <Border>All;[69:69:69];1;Solid;False;4;Black</Border>
+                  <Brush>[219:219:219]</Brush>
+                  <ClientRectangle>2,2.34,8.2,0.2</ClientRectangle>
+                  <ComponentStyle>CrossTab</ComponentStyle>
+                  <Conditions isList="true" count="0" />
+                  <Expressions isList="true" count="0" />
+                  <Font>Arial,10,Bold</Font>
+                  <Guid>ea9be08330bb4181a56aa0dbb8f63b59</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>CrossTab2_RowTotal2</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="20" />
+                  <Restrictions>AllowMove, AllowResize, AllowSelect, AllowChange</Restrictions>
+                  <Text>جميع المعاملات للموظف</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                </CrossTab2_RowTotal2>
+                <CrossTab2_Row2_Title Ref="24" type="CrossTitle" isKey="true">
+                  <Border>All;[69:69:69];1;Solid;False;4;Black</Border>
+                  <Brush>DarkGray</Brush>
+                  <ClientRectangle>2,0.22,1.5,1.5</ClientRectangle>
+                  <ComponentStyle>CrossTab</ComponentStyle>
+                  <Expressions isList="true" count="0" />
+                  <Font>Arial,10,Bold</Font>
+                  <Guid>0fdba25322684dcb80c3b17d5059a2e5</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>CrossTab2_Row2_Title</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="20" />
+                  <Restrictions>AllowMove, AllowResize, AllowSelect, AllowChange</Restrictions>
+                  <Text>نوع المعاملة</Text>
+                  <TextBrush>[19:19:19]</TextBrush>
+                  <Type>Expression</Type>
+                  <TypeOfComponent>Row:CrossTab2_Row2</TypeOfComponent>
+                </CrossTab2_Row2_Title>
+                <CrossTab2_RowTotal3 Ref="25" type="CrossRowTotal" isKey="true">
+                  <Border>All;[69:69:69];1;Solid;False;4;Black</Border>
+                  <Brush>[219:219:219]</Brush>
+                  <ClientRectangle>3.5,2.14,6.7,0.2</ClientRectangle>
+                  <ComponentStyle>CrossTab</ComponentStyle>
+                  <Conditions isList="true" count="0" />
+                  <Expressions isList="true" count="0" />
+                  <Font>Arial,10</Font>
+                  <Guid>9810774e147143f18478d7e70e1c1912</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>CrossTab2_RowTotal3</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="20" />
+                  <Restrictions>AllowMove, AllowResize, AllowSelect, AllowChange</Restrictions>
+                  <Text>المجموع الكلى لنوع المعاملة</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                </CrossTab2_RowTotal3>
+                <CrossTab2_Row3_Title Ref="26" type="CrossTitle" isKey="true">
+                  <Border>All;[69:69:69];1;Solid;False;4;Black</Border>
+                  <Brush>DarkGray</Brush>
+                  <ClientRectangle>3.5,0.22,1.6,1.5</ClientRectangle>
+                  <ComponentStyle>CrossTab</ComponentStyle>
+                  <Expressions isList="true" count="0" />
+                  <Font>Arial,10,Bold</Font>
+                  <Guid>4d913b3483f7457a9dc0f1ba91d6f78e</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>CrossTab2_Row3_Title</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="20" />
+                  <Restrictions>AllowMove, AllowResize, AllowSelect, AllowChange</Restrictions>
+                  <Text>حالة المعاملة</Text>
+                  <TextBrush>[19:19:19]</TextBrush>
+                  <Type>Expression</Type>
+                  <TypeOfComponent>Row:CrossTab2_Row3</TypeOfComponent>
+                </CrossTab2_Row3_Title>
+                <CrossTab2_RowTotal4 Ref="27" type="CrossRowTotal" isKey="true">
+                  <Border>All;[69:69:69];1;Solid;False;4;Black</Border>
+                  <Brush>[219:219:219]</Brush>
+                  <ClientRectangle>5.1,1.94,5.1,0.2</ClientRectangle>
+                  <ComponentStyle>CrossTab</ComponentStyle>
+                  <Conditions isList="true" count="0" />
+                  <Expressions isList="true" count="0" />
+                  <Font>Arial,10</Font>
+                  <Guid>a201ccd0593046f2ad778d51f99b8f18</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>CrossTab2_RowTotal4</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="20" />
+                  <Restrictions>AllowMove, AllowResize, AllowSelect, AllowChange</Restrictions>
+                  <Text>مجموع معاملات الحالة: {V_DetailedAssignedApplications.ApplicationStatusName}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                </CrossTab2_RowTotal4>
+                <CrossTab2_Row4_Title Ref="28" type="CrossTitle" isKey="true">
+                  <Border>All;[69:69:69];1;Solid;False;4;Black</Border>
+                  <Brush>DarkGray</Brush>
+                  <ClientRectangle>5.1,0.22,1,1.5</ClientRectangle>
+                  <ComponentStyle>CrossTab</ComponentStyle>
+                  <Expressions isList="true" count="0" />
+                  <Font>Arial,10,Bold</Font>
+                  <Guid>eeb598d0b2d04dd3bb1fb0588f64c835</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>CrossTab2_Row4_Title</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="20" />
+                  <Restrictions>AllowMove, AllowResize, AllowSelect, AllowChange</Restrictions>
+                  <Text>رقم المعاملة</Text>
+                  <TextBrush>[19:19:19]</TextBrush>
+                  <Type>Expression</Type>
+                  <TypeOfComponent>Row:CrossTab2_Row4</TypeOfComponent>
+                </CrossTab2_Row4_Title>
+                <CrossTab2_RowTotal5 Ref="29" type="CrossRowTotal" isKey="true">
+                  <Border>All;[69:69:69];1;Solid;False;4;Black</Border>
+                  <Brush>[219:219:219]</Brush>
+                  <ClientRectangle>6.1,1.94,0,0</ClientRectangle>
+                  <ComponentStyle>CrossTab</ComponentStyle>
+                  <Conditions isList="true" count="0" />
+                  <Enabled>False</Enabled>
+                  <Expressions isList="true" count="0" />
+                  <Font>Arial,8</Font>
+                  <Guid>68a30f4a76634e42bf55c3ba3b3cd0ee</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>CrossTab2_RowTotal5</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="20" />
+                  <Restrictions>AllowMove, AllowResize, AllowSelect, AllowChange</Restrictions>
+                  <Text>Total</Text>
+                  <TextBrush>Black</TextBrush>
+                </CrossTab2_RowTotal5>
+                <CrossTab2_Row5_Title Ref="30" type="CrossTitle" isKey="true">
+                  <Border>All;[69:69:69];1;Solid;False;4;Black</Border>
+                  <Brush>DarkGray</Brush>
+                  <ClientRectangle>6.1,0.22,1.1,1.5</ClientRectangle>
+                  <ComponentStyle>CrossTab</ComponentStyle>
+                  <Expressions isList="true" count="0" />
+                  <Font>Arial,10,Bold</Font>
+                  <Guid>621d5eaa946b4b79a510edaf13eb3173</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>CrossTab2_Row5_Title</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="20" />
+                  <Restrictions>AllowMove, AllowResize, AllowSelect, AllowChange</Restrictions>
+                  <Text>اسم المتقدم</Text>
+                  <TextBrush>[19:19:19]</TextBrush>
+                  <Type>Expression</Type>
+                  <TypeOfComponent>Row:CrossTab2_Row5</TypeOfComponent>
+                </CrossTab2_Row5_Title>
+                <CrossTab2_RowTotal6 Ref="31" type="CrossRowTotal" isKey="true">
+                  <Border>All;[69:69:69];1;Solid;False;4;Black</Border>
+                  <Brush>[219:219:219]</Brush>
+                  <ClientRectangle>7.2,1.94,0,0</ClientRectangle>
+                  <ComponentStyle>CrossTab</ComponentStyle>
+                  <Conditions isList="true" count="0" />
+                  <Enabled>False</Enabled>
+                  <Expressions isList="true" count="0" />
+                  <Font>Arial,8</Font>
+                  <Guid>6cb17816c4bc4ea791fbffa2c55dd34f</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>CrossTab2_RowTotal6</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="20" />
+                  <Restrictions>AllowMove, AllowResize, AllowSelect, AllowChange</Restrictions>
+                  <Text>Total</Text>
+                  <TextBrush>Black</TextBrush>
+                </CrossTab2_RowTotal6>
+                <CrossTab2_Row6_Title Ref="32" type="CrossTitle" isKey="true">
+                  <Border>All;[69:69:69];1;Solid;False;4;Black</Border>
+                  <Brush>DarkGray</Brush>
+                  <ClientRectangle>7.2,0.22,0.8,1.5</ClientRectangle>
+                  <ComponentStyle>CrossTab</ComponentStyle>
+                  <Expressions isList="true" count="0" />
+                  <Font>Arial,10,Bold</Font>
+                  <Guid>e25ff05d36674915b984ba9fa6885567</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>CrossTab2_Row6_Title</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="20" />
+                  <Restrictions>AllowMove, AllowResize, AllowSelect, AllowChange</Restrictions>
+                  <Text>الرقم المدنى</Text>
+                  <TextBrush>[19:19:19]</TextBrush>
+                  <Type>Expression</Type>
+                  <TypeOfComponent>Row:CrossTab2_Row6</TypeOfComponent>
+                </CrossTab2_Row6_Title>
+                <CrossTab2_RowTotal7 Ref="33" type="CrossRowTotal" isKey="true">
+                  <Border>All;[69:69:69];1;Solid;False;4;Black</Border>
+                  <Brush>[219:219:219]</Brush>
+                  <ClientRectangle>8,1.94,0,0</ClientRectangle>
+                  <ComponentStyle>CrossTab</ComponentStyle>
+                  <Conditions isList="true" count="0" />
+                  <Enabled>False</Enabled>
+                  <Expressions isList="true" count="0" />
+                  <Font>Arial,8</Font>
+                  <Guid>6da2e8ff74484072a4ed98a57feac223</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>CrossTab2_RowTotal7</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="20" />
+                  <Restrictions>AllowMove, AllowResize, AllowSelect, AllowChange</Restrictions>
+                  <Text>Total</Text>
+                  <TextBrush>Black</TextBrush>
+                </CrossTab2_RowTotal7>
+                <CrossTab2_Row7_Title Ref="34" type="CrossTitle" isKey="true">
+                  <Border>All;[69:69:69];1;Solid;False;4;Black</Border>
+                  <Brush>DarkGray</Brush>
+                  <ClientRectangle>8,0.22,1.3,1.5</ClientRectangle>
+                  <ComponentStyle>CrossTab</ComponentStyle>
+                  <Expressions isList="true" count="0" />
+                  <Font>Arial,10,Bold</Font>
+                  <Guid>f5531ff22f154a1389878c63ffc34b94</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <MinSize>1,0</MinSize>
+                  <Name>CrossTab2_Row7_Title</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="20" />
+                  <Restrictions>AllowMove, AllowResize, AllowSelect, AllowChange</Restrictions>
+                  <Text>الوظيفة</Text>
+                  <TextBrush>[19:19:19]</TextBrush>
+                  <Type>Expression</Type>
+                  <TypeOfComponent>Row:CrossTab2_Row7</TypeOfComponent>
+                </CrossTab2_Row7_Title>
+                <CrossTab2_RowTotal8 Ref="35" type="CrossRowTotal" isKey="true">
+                  <Border>All;[69:69:69];1;Solid;False;4;Black</Border>
+                  <Brush>[219:219:219]</Brush>
+                  <ClientRectangle>9.3,1.94,0,0</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Enabled>False</Enabled>
+                  <Expressions isList="true" count="0" />
+                  <Font>Arial,8</Font>
+                  <Guid>5db421663fbf41fc9d699754765bc670</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>CrossTab2_RowTotal8</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="20" />
+                  <Restrictions>AllowMove, AllowResize, AllowSelect, AllowChange</Restrictions>
+                  <Text>Total</Text>
+                  <TextBrush>Black</TextBrush>
+                </CrossTab2_RowTotal8>
+                <CrossTab2_Row8_Title Ref="36" type="CrossTitle" isKey="true">
+                  <Border>All;[69:69:69];1;Solid;False;4;Black</Border>
+                  <Brush>DarkGray</Brush>
+                  <ClientRectangle>9.3,0.22,0.9,1.5</ClientRectangle>
+                  <Expressions isList="true" count="0" />
+                  <Font>Arial,10,Bold</Font>
+                  <Guid>fd668e5a62e3471abae9d884b87dc361</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>CrossTab2_Row8_Title</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="20" />
+                  <Restrictions>AllowMove, AllowResize, AllowSelect, AllowChange</Restrictions>
+                  <Text>تاريخ الانشاء</Text>
+                  <TextBrush>[19:19:19]</TextBrush>
+                  <Type>Expression</Type>
+                  <TypeOfComponent>Row:CrossTab2_Row8</TypeOfComponent>
+                </CrossTab2_Row8_Title>
+                <CrossTab2_ColTotal1 Ref="37" type="CrossColumnTotal" isKey="true">
+                  <Border>All;[69:69:69];1;Solid;False;4;Black</Border>
+                  <Brush>[219:219:219]</Brush>
+                  <ClientRectangle>10.52,0.22,0.6,1.5</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Expressions isList="true" count="0" />
+                  <Font>Arial,12,Bold</Font>
+                  <Guid>f2f0852a7be84d11aef1c7f4f5382891</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>CrossTab2_ColTotal1</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="20" />
+                  <Restrictions>AllowMove, AllowResize, AllowSelect, AllowChange</Restrictions>
+                  <Text>المجموع</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Type>Expression</Type>
+                </CrossTab2_ColTotal1>
+                <CrossTab2_LeftTitle Ref="38" type="CrossTitle" isKey="true">
+                  <Border>None;[69:69:69];1;Solid;False;4;Black</Border>
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>0,0,10.2,0.2</ClientRectangle>
+                  <Expressions isList="true" count="0" />
+                  <Font>Arial,8</Font>
+                  <Guid>edab8b82ba614f9796eef4844153dc0f</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>CrossTab2_LeftTitle</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="20" />
+                  <Restrictions>AllowMove, AllowResize, AllowSelect, AllowChange</Restrictions>
+                  <TextBrush>[19:19:19]</TextBrush>
+                  <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+                  <Type>Expression</Type>
+                  <TypeOfComponent>LeftTitle</TypeOfComponent>
+                </CrossTab2_LeftTitle>
+                <CrossTab2_RightTitle Ref="39" type="CrossTitle" isKey="true">
+                  <Border>All;[69:69:69];1;Solid;False;4;Black</Border>
+                  <Brush>DarkGray</Brush>
+                  <ClientRectangle>10.22,0,0.9,0.2</ClientRectangle>
+                  <Expressions isList="true" count="0" />
+                  <Font>Arial,10,Bold</Font>
+                  <Guid>484d438042744f37b8e2165c34632094</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>CrossTab2_RightTitle</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="20" />
+                  <Restrictions>AllowMove, AllowResize, AllowSelect, AllowChange</Restrictions>
+                  <Text>حالات المعاملات</Text>
+                  <TextBrush>[19:19:19]</TextBrush>
+                  <Type>Expression</Type>
+                  <TypeOfComponent>RightTitle</TypeOfComponent>
+                </CrossTab2_RightTitle>
+                <CrossTab2_Row1 Ref="40" type="CrossRow" isKey="true">
+                  <Alias>EmployeeName</Alias>
+                  <Border>All;[69:69:69];1;Solid;False;4;Black</Border>
+                  <Brush>DarkGray</Brush>
+                  <ClientRectangle>0,1.74,2,0.8</ClientRectangle>
+                  <ComponentStyle>CrossTab</ComponentStyle>
+                  <Conditions isList="true" count="0" />
+                  <DisplayValue>{V_DetailedAssignedApplications.EmployeeName}</DisplayValue>
+                  <Expressions isList="true" count="0" />
+                  <Font>Arial,16,Bold</Font>
+                  <Guid>80b5b65676084b238ab32b3053409241</Guid>
+                  <KeepMergedCellsTogether>True</KeepMergedCellsTogether>
+                  <Margins>0,0,0,0</Margins>
+                  <MinSize>2,0</MinSize>
+                  <Name>CrossTab2_Row1</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="20" />
+                  <Restrictions>AllowMove, AllowResize, AllowSelect, AllowChange</Restrictions>
+                  <Text>EmployeeName</Text>
+                  <TextBrush>[19:19:19]</TextBrush>
+                  <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+                  <TotalGuid>1169e43b89764674a7f48afe112e9463</TotalGuid>
+                  <Value>{V_DetailedAssignedApplications.EmployeeName}</Value>
+                </CrossTab2_Row1>
+                <CrossTab2_Row2 Ref="41" type="CrossRow" isKey="true">
+                  <Alias>ApplicationTypeName</Alias>
+                  <Border>All;[69:69:69];1;Solid;False;4;Black</Border>
+                  <Brush>DarkGray</Brush>
+                  <ClientRectangle>2,1.74,1.5,0.6</ClientRectangle>
+                  <ComponentStyle>CrossTab</ComponentStyle>
+                  <Conditions isList="true" count="0" />
+                  <DisplayValue>{V_DetailedAssignedApplications.ApplicationTypeName}</DisplayValue>
+                  <Expressions isList="true" count="0" />
+                  <Font>Arial,10,Bold</Font>
+                  <Guid>23dffe7f449e44cc9d0f8d9040085c78</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>CrossTab2_Row2</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="20" />
+                  <Restrictions>AllowMove, AllowResize, AllowSelect, AllowChange</Restrictions>
+                  <Text>ApplicationTypeName</Text>
+                  <TextBrush>[19:19:19]</TextBrush>
+                  <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+                  <TotalGuid>ea9be08330bb4181a56aa0dbb8f63b59</TotalGuid>
+                  <Value>{V_DetailedAssignedApplications.ApplicationTypeName}</Value>
+                </CrossTab2_Row2>
+                <CrossTab2_Row3 Ref="42" type="CrossRow" isKey="true">
+                  <Alias>ApplicationStatusName</Alias>
+                  <Border>All;[69:69:69];1;Solid;False;4;Black</Border>
+                  <Brush>DarkGray</Brush>
+                  <ClientRectangle>3.5,1.74,1.6,0.4</ClientRectangle>
+                  <ComponentStyle>CrossTab</ComponentStyle>
+                  <Conditions isList="true" count="0" />
+                  <DisplayValue>{V_DetailedAssignedApplications.ApplicationStatusName}</DisplayValue>
+                  <Expressions isList="true" count="0" />
+                  <Font>Arial,10,Bold</Font>
+                  <Guid>afadf60450704ff783d2c599071a76e8</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>CrossTab2_Row3</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="20" />
+                  <Restrictions>AllowMove, AllowResize, AllowSelect, AllowChange</Restrictions>
+                  <Text>ApplicationStatusName</Text>
+                  <TextBrush>[19:19:19]</TextBrush>
+                  <TotalGuid>9810774e147143f18478d7e70e1c1912</TotalGuid>
+                  <Value>{V_DetailedAssignedApplications.ApplicationStatusName}</Value>
+                </CrossTab2_Row3>
+                <CrossTab2_Row4 Ref="43" type="CrossRow" isKey="true">
+                  <Alias>ApplicationNumber</Alias>
+                  <Border>All;[69:69:69];1;Solid;False;4;Black</Border>
+                  <Brush>DarkGray</Brush>
+                  <ClientRectangle>5.1,1.74,1,0.2</ClientRectangle>
+                  <ComponentStyle>CrossTab</ComponentStyle>
+                  <Conditions isList="true" count="0" />
+                  <DisplayValue>{V_DetailedAssignedApplications.ApplicationNumber}</DisplayValue>
+                  <Expressions isList="true" count="0" />
+                  <Font>Arial,8</Font>
+                  <Guid>bf16ee38fa11430eb2577bc747f6c24b</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <MinSize>0.5,0</MinSize>
+                  <Name>CrossTab2_Row4</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="20" />
+                  <Restrictions>AllowMove, AllowResize, AllowSelect, AllowChange</Restrictions>
+                  <Text>ApplicationNumber</Text>
+                  <TextBrush>[19:19:19]</TextBrush>
+                  <TotalGuid>a201ccd0593046f2ad778d51f99b8f18</TotalGuid>
+                  <Value>{V_DetailedAssignedApplications.ApplicationNumber}</Value>
+                </CrossTab2_Row4>
+                <CrossTab2_Row5 Ref="44" type="CrossRow" isKey="true">
+                  <Alias>ApplicantName</Alias>
+                  <Border>All;[69:69:69];1;Solid;False;4;Black</Border>
+                  <Brush>DarkGray</Brush>
+                  <ClientRectangle>6.1,1.74,1.1,0.2</ClientRectangle>
+                  <ComponentStyle>CrossTab</ComponentStyle>
+                  <Conditions isList="true" count="0" />
+                  <DisplayValue>{V_DetailedAssignedApplications.ApplicantName}</DisplayValue>
+                  <Expressions isList="true" count="0" />
+                  <Font>Arial,10,Bold</Font>
+                  <Guid>309e4c1d6d644052a4094dbfaeaa741e</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <MinSize>1,0</MinSize>
+                  <Name>CrossTab2_Row5</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="20" />
+                  <Restrictions>AllowMove, AllowResize, AllowSelect, AllowChange</Restrictions>
+                  <Text>ApplicantName</Text>
+                  <TextBrush>[19:19:19]</TextBrush>
+                  <TotalGuid>68a30f4a76634e42bf55c3ba3b3cd0ee</TotalGuid>
+                  <Value>{V_DetailedAssignedApplications.ApplicantName}</Value>
+                </CrossTab2_Row5>
+                <CrossTab2_Row6 Ref="45" type="CrossRow" isKey="true">
+                  <Alias>ApplicantCivilId</Alias>
+                  <Border>All;[69:69:69];1;Solid;False;4;Black</Border>
+                  <Brush>DarkGray</Brush>
+                  <ClientRectangle>7.2,1.74,0.8,0.2</ClientRectangle>
+                  <ComponentStyle>CrossTab</ComponentStyle>
+                  <Conditions isList="true" count="0" />
+                  <DisplayValue>{V_DetailedAssignedApplications.ApplicantCivilId}</DisplayValue>
+                  <Expressions isList="true" count="0" />
+                  <Font>Arial,8</Font>
+                  <Guid>8625f01680974fcb8b4540ca57a477b1</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>CrossTab2_Row6</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="20" />
+                  <Restrictions>AllowMove, AllowResize, AllowSelect, AllowChange</Restrictions>
+                  <Text>ApplicantCivilId</Text>
+                  <TextBrush>[19:19:19]</TextBrush>
+                  <TotalGuid>6cb17816c4bc4ea791fbffa2c55dd34f</TotalGuid>
+                  <Value>{V_DetailedAssignedApplications.ApplicantCivilId}</Value>
+                </CrossTab2_Row6>
+                <CrossTab2_Row7 Ref="46" type="CrossRow" isKey="true">
+                  <Alias>ApplicantJobTypeName</Alias>
+                  <Border>All;[69:69:69];1;Solid;False;4;Black</Border>
+                  <Brush>DarkGray</Brush>
+                  <ClientRectangle>8,1.74,1.3,0.2</ClientRectangle>
+                  <ComponentStyle>CrossTab</ComponentStyle>
+                  <Conditions isList="true" count="0" />
+                  <DisplayValue>{V_DetailedAssignedApplications.ApplicantJobTypeName}</DisplayValue>
+                  <Expressions isList="true" count="0" />
+                  <Font>Arial,8</Font>
+                  <Guid>5ecc65788c8f4dc6b48555f5f32c8fc7</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <MinSize>0.5,0</MinSize>
+                  <Name>CrossTab2_Row7</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="20" />
+                  <Restrictions>AllowMove, AllowResize, AllowSelect, AllowChange</Restrictions>
+                  <Text>ApplicantJobTypeName</Text>
+                  <TextBrush>[19:19:19]</TextBrush>
+                  <TotalGuid>6da2e8ff74484072a4ed98a57feac223</TotalGuid>
+                  <Value>{V_DetailedAssignedApplications.ApplicantJobTypeName}</Value>
+                </CrossTab2_Row7>
+                <CrossTab2_Row8 Ref="47" type="CrossRow" isKey="true">
+                  <Alias>ApplicationDate</Alias>
+                  <Border>All;[69:69:69];1;Solid;False;4;Black</Border>
+                  <Brush>DarkGray</Brush>
+                  <ClientRectangle>9.3,1.74,0.9,0.2</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <DisplayValue>{V_DetailedAssignedApplications.ApplicationDate}</DisplayValue>
+                  <Expressions isList="true" count="0" />
+                  <Font>Arial,8</Font>
+                  <Guid>5065e96361164004bc06ca0ccde4a161</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>CrossTab2_Row8</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="20" />
+                  <Restrictions>AllowMove, AllowResize, AllowSelect, AllowChange</Restrictions>
+                  <Text>ApplicationDate</Text>
+                  <TextBrush>[19:19:19]</TextBrush>
+                  <TotalGuid>5db421663fbf41fc9d699754765bc670</TotalGuid>
+                  <Value>{V_DetailedAssignedApplications.ApplicationDate}</Value>
+                </CrossTab2_Row8>
+                <CrossTab2_Column1 Ref="48" type="CrossColumn" isKey="true">
+                  <Alias>ApplicationStatusName</Alias>
+                  <Border>All;[69:69:69];1;Solid;False;4;Black</Border>
+                  <Brush>DarkGray</Brush>
+                  <ClientRectangle>10.22,0.22,0.3,1.5</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <DisplayValue>{V_DetailedAssignedApplications.ApplicationStatusName}</DisplayValue>
+                  <Expressions isList="true" count="0" />
+                  <Font>Arial,12,Bold</Font>
+                  <Guid>ad18b58a51134c20a58b3a4dc193968b</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>CrossTab2_Column1</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="20" />
+                  <Restrictions>AllowMove, AllowResize, AllowSelect, AllowChange</Restrictions>
+                  <Text>ApplicationStatusName</Text>
+                  <TextBrush>[19:19:19]</TextBrush>
+                  <TextOptions>,,,,,Angle=90</TextOptions>
+                  <TotalGuid>f2f0852a7be84d11aef1c7f4f5382891</TotalGuid>
+                  <Value>{V_DetailedAssignedApplications.ApplicationStatusName}</Value>
+                </CrossTab2_Column1>
+                <CrossTab2_Sum1 Ref="49" type="CrossSummary" isKey="true">
+                  <Alias>ApplicationNumber</Alias>
+                  <Border>All;[69:69:69];1;Solid;False;4;Black</Border>
+                  <Brush>[255:255:255]</Brush>
+                  <ClientRectangle>10.22,1.74,0.3,0.2</ClientRectangle>
+                  <ComponentStyle>CrossTab</ComponentStyle>
+                  <Conditions isList="true" count="0" />
+                  <Expressions isList="true" count="0" />
+                  <Font>Arial,8</Font>
+                  <Guid>ffc7dfd727f84282989679bff50bc24e</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <MinSize>0.2,0</MinSize>
+                  <Name>CrossTab2_Sum1</Name>
+                  <Page isRef="7" />
+                  <Parent isRef="20" />
+                  <Restrictions>AllowMove, AllowResize, AllowSelect, AllowChange</Restrictions>
+                  <Summary>CountDistinct</Summary>
+                  <Text>0</Text>
+                  <TextBrush>Black</TextBrush>
+                  <Value>{V_DetailedAssignedApplications.ApplicationNumber}</Value>
+                </CrossTab2_Sum1>
+              </Components>
+              <Conditions isList="true" count="0" />
+              <CrossTabStyleIndex>1</CrossTabStyleIndex>
+              <DataRelationName />
+              <DataSourceName>V_DetailedAssignedApplications</DataSourceName>
+              <EmptyValue />
+              <Expressions isList="true" count="0" />
+              <Filters isList="true" count="3">
+                <value>_x007B_DateTo_x0020__x0021__x003D__x0020_null_x0020__x003F__x0020_V_DetailedAssignedApplications.ApplicationDate_x0020__x003C__x003D__x0020_DateTo_x0020_:_x0020_V_DetailedAssignedApplications.ApplicationDate_x0020__x003D__x003D__x0020_V_DetailedAssignedApplications.ApplicationDate_x007D_</value>
+                <value>_x007B__x0020_DateFrom_x0020__x0021__x003D__x0020_null_x0020__x003F__x0020_V_DetailedAssignedApplications.ApplicationDate_x0020__x003E__x003D__x0020_DateFrom_x0020__x0020_:_x0020_V_DetailedAssignedApplications.ApplicationDate_x0020__x003D__x003D__x0020_V_DetailedAssignedApplications.ApplicationDate_x007D_</value>
+                <value>_x007B__x0028_EmployeeId_x0020__x0020__x0021__x003D__x0020_-1_x0029__x0020__x0020__x003F__x0020_V_DetailedAssignedApplications.EmployeeId_x0020__x003D__x003D__x0020_EmployeeId_x0020__x0020_:_x0020_V_DetailedAssignedApplications.EmployeeId_x0020__x003D__x003D__x0020_V_DetailedAssignedApplications.EmployeeId_x007D_</value>
+              </Filters>
+              <Name>CrossTab2</Name>
+              <Page isRef="7" />
+              <Parent isRef="14" />
+              <RightToLeft>True</RightToLeft>
+              <Sort isList="true" count="0" />
+            </CrossTab2>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>Employee_View</DataSourceName>
+          <Expressions isList="true" count="0" />
+          <Filters isList="true" count="1">
+            <value>_x007B_Employee_View.UserId_x003D__x003D_EmployeeId_x007D_</value>
+          </Filters>
+          <Name>DataBand1</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <RightToLeft>True</RightToLeft>
+          <Sort isList="true" count="0" />
+        </DataBand1>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Expressions isList="true" count="0" />
+      <Guid>921ce7ee98444a7dbbb9d8f21e5b7a38</Guid>
+      <Margins>0.2,0.1,0.2,0.2</Margins>
+      <Name>Page1</Name>
+      <Orientation>Landscape</Orientation>
+      <PageHeight>8.27</PageHeight>
+      <PageWidth>11.69</PageWidth>
+      <PaperSize>A4</PaperSize>
+      <Report isRef="0" />
+    </Page1>
+  </Pages>
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>6/28/2022 2:23:55 PM</ReportChanged>
+  <ReportCreated>11/28/2021 11:31:13 AM</ReportCreated>
+  <ReportFile>C:\Users\629812\Desktop\ReportDetailed_v2.mrt</ReportFile>
+  <ReportGuid>8a963d49c37d40f298064f23a607b63f</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Inches</ReportUnit>
+  <ReportVersion>2021.4.4.0</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="1">
+    <Style1 Ref="50" type="Stimulsoft.Report.StiCrossTabStyle" isKey="true">
+      <AlternatingCellBackColor>238, 238, 238</AlternatingCellBackColor>
+      <AlternatingCellForeColor>50, 58, 69</AlternatingCellForeColor>
+      <BackColor>Transparent</BackColor>
+      <CellBackColor>White</CellBackColor>
+      <CellForeColor>50, 58, 69</CellForeColor>
+      <ColumnHeaderBackColor>35, 159, 217</ColumnHeaderBackColor>
+      <ColumnHeaderForeColor>White</ColumnHeaderForeColor>
+      <Conditions isList="true" count="0" />
+      <HotColumnHeaderBackColor>22, 122, 189</HotColumnHeaderBackColor>
+      <HotRowHeaderBackColor>22, 122, 189</HotRowHeaderBackColor>
+      <LineColor>White</LineColor>
+      <Name>Style1</Name>
+      <RowHeaderBackColor>35, 159, 217</RowHeaderBackColor>
+      <RowHeaderForeColor>238, 238, 238</RowHeaderForeColor>
+      <SelectedCellBackColor>82, 182, 249</SelectedCellBackColor>
+      <SelectedCellForeColor>White</SelectedCellForeColor>
+      <TotalCellColumnBackColor>35, 159, 217</TotalCellColumnBackColor>
+      <TotalCellColumnForeColor>White</TotalCellColumnForeColor>
+      <TotalCellRowBackColor>35, 159, 217</TotalCellRowBackColor>
+      <TotalCellRowForeColor>238, 238, 238</TotalCellRowForeColor>
+    </Style1>
+  </Styles>
+</StiSerializer>

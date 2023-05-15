@@ -1,0 +1,515 @@
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Threading.Tasks;
+using AutoMapper;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using ResidencyApplication.Services.Models.EntityModels;
+using ResidencyApplication.Services.Models.jwt;
+
+namespace ResidencyApplication.Services.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class UserApplicationsController : ControllerBase
+    {
+        private readonly ResidencyApplicationContext _context;
+        private readonly IMapper _mapper;
+        public ResponseRequest ResponseRequest_;
+
+        public UserApplicationsController(ResidencyApplicationContext context, IMapper mapper)
+        {
+            _context = context;
+            //_context.ChangeTracker.LazyLoadingEnabled = false;
+            _mapper = mapper;
+
+        }
+
+        // GET: api/UserApplications
+        [HttpGet]
+        public async Task<ActionResult> GetUserApplication()
+        {
+           // return await _context.UserApplications.ToListAsync();
+            var res = await _context.UserApplications.ToListAsync();
+            var resDTO = _mapper.Map<List<UserApplicationsDTO>>(res);
+            return Ok(resDTO);
+        }
+
+        // GET: api/UserApplication/id
+        [HttpGet("{id}")]
+        public async Task<ActionResult> GetUserApplication(int id)
+        {
+            var UserApplication = await _context.UserApplications.FindAsync(id);
+
+            if (UserApplication == null)
+            {
+                return NotFound();
+            }
+
+          //  var resDTO = _mapper.Map<List<UserApplicationsDTO>>(UserApplication);
+            return Ok(UserApplication);
+            //return UserApplication;
+        }
+        // GET: api/UserId/id
+        [HttpGet("UserId/{UserId}")]
+        public async Task<ActionResult> GetUserApplicationsByUserId(int UserId)
+        {
+            var UserApplication = from uapp in _context.UserApplications
+                                  join appt in _context.ApplicationTypes
+                                  on uapp.ApplicationTypeId equals appt.ApplicationTypeId
+                                  join apps in _context.ApplicationStatuses
+                                  on uapp.ApplicationStatusId equals apps.ApplicationStatusId
+                                  join uapps in _context.UserApplicationSteps
+                                  on uapp.StepNo equals uapps.StepNo
+                                  where uapp.UserId == UserId
+                                  select new {uapp.ApplicationNumber,uapp.ApplicationDate,uapp.Remark,uapp.ApplicationStatusId,uapp.ApplicationTypeId,uapp.StepNo,uapp.IsActive,uapp.UserId,
+                                              appt.ApplicationTypeName,
+                                              apps.ApplicationStatusName,
+                                              uapps.StepName
+                                   };
+
+
+
+            if (UserApplication == null)
+            {
+                return NotFound();
+            }
+
+           // var resDTO = _mapper.Map<List<UserApplicationsDetailedDTO>>(UserApplication);
+            return Ok(UserApplication);
+            //return UserApplication;
+        }
+
+        [HttpGet("Admin")]
+        public async Task<ActionResult> GetUserApplicationsAdmin()
+        {
+
+            var UserApplication = from uapp in _context.UserApplications
+                                  join appt in _context.ApplicationTypes on uapp.ApplicationTypeId equals appt.ApplicationTypeId
+                                  join apps in _context.ApplicationStatuses on uapp.ApplicationStatusId equals apps.ApplicationStatusId
+                                  join uapps in _context.UserApplicationSteps on uapp.StepNo equals uapps.StepNo
+
+                                 select new
+                                  {
+                                      uapp.ApplicationNumber,
+                                      uapp.ApplicationDate,
+                                      uapp.Remark,
+                                      uapp.ApplicationStatusId,
+                                      uapp.ApplicationTypeId,
+                                      uapp.StepNo,
+                                      uapp.IsActive,
+                                      uapp.UserId,
+                                      appt.ApplicationTypeName,
+                                      apps.ApplicationStatusName,
+                                      uapps.StepName,
+                                      CivilId ="",
+                                      UserName = ""
+                                  };
+
+
+
+            if (UserApplication == null)
+            {
+                return NotFound();
+            }
+            return Ok(UserApplication);
+        }
+
+        [HttpGet("List")]
+        public async Task<ActionResult> GetApplicationList(String Type)
+        {
+            var UserApplication =new object();
+            UserApplication = null;
+            if (Type == "inward")
+            {
+                 UserApplication = from a in _context.UserApplications
+                                      join b in _context.ApplicationTypes on a.ApplicationTypeId equals b.ApplicationTypeId into ab
+                                      from b in ab.DefaultIfEmpty() // <== makes join left join
+                                      join c in _context.ApplicationStatuses on a.ApplicationStatusId equals c.ApplicationStatusId into ac
+                                      from c in ac.DefaultIfEmpty()
+                                      join d in _context.UserApplicationSteps on a.StepNo equals d.StepNo into ad
+                                      from d in ad.DefaultIfEmpty()
+                                      join e in _context.SapUsers on a.UserId equals e.UserId into ae
+                                      from e in ae.DefaultIfEmpty()
+                                      join f in _context.NonSapUsers on a.UserId equals f.UserId into af
+                                      from f in af.DefaultIfEmpty()
+                                      join g in _context.Users on a.UserId equals g.UserId into ag
+                                      from g in ag.DefaultIfEmpty()
+                                   join p in _context.PersonalInformations on a.ApplicationNumber equals p.ApplicationNumber into pa
+                                   from p in pa.DefaultIfEmpty()
+                                   join pass in _context.PassportInformations on a.ApplicationNumber equals pass.ApplicationNumber into passa
+                                   from pass in passa.DefaultIfEmpty()
+                                   join n in _context.Nationalities on g.NationalityId equals n.NationalityId into ng
+                                   from n in ng.DefaultIfEmpty()
+                                   where a.ApplicationStatusId == 5 // <== where applications is pending status
+                                      select new
+                                      {
+                                          a.ApplicationNumber,
+                                          a.ApplicationDate,
+                                          a.Remark,
+                                          a.ApplicationStatusId,
+                                          a.ApplicationTypeId,
+                                          a.StepNo,
+                                          a.IsActive,
+                                          a.UserId,
+                                          b.ApplicationTypeName,
+                                          c.ApplicationStatusName,
+                                          d.StepName,
+                                          n.NationalityName,
+                                          pass.PassportNumber,
+                                          pass.IssueDate,
+                                          pass.ExpiryDate,
+                                          p.JobTitle,
+                                          p.BirthDate,
+                                          CivilId = g.IsSapUser == true ? e.CivilId : f.CivilId,
+                                          UserName = g.IsSapUser == true ? e.EmployeeName : f.EmployeeName
+                                      };
+            }
+            else if (Type == "outward")
+            {
+                UserApplication = from a in _context.UserApplications
+                                  join b in _context.ApplicationTypes on a.ApplicationTypeId equals b.ApplicationTypeId into ab
+                                  from b in ab.DefaultIfEmpty() // <== makes join left join
+                                  join c in _context.ApplicationStatuses on a.ApplicationStatusId equals c.ApplicationStatusId into ac
+                                  from c in ac.DefaultIfEmpty()
+                                  join d in _context.UserApplicationSteps on a.StepNo equals d.StepNo into ad
+                                  from d in ad.DefaultIfEmpty()
+                                  join e in _context.SapUsers on a.UserId equals e.UserId into ae
+                                  from e in ae.DefaultIfEmpty()
+                                  join f in _context.NonSapUsers on a.UserId equals f.UserId into af
+                                  from f in af.DefaultIfEmpty()
+                                  join g in _context.Users on a.UserId equals g.UserId into ag
+                                  from g in ag.DefaultIfEmpty()
+                                  join p in _context.PersonalInformations on a.ApplicationNumber equals p.ApplicationNumber into pa
+                                  from p in pa.DefaultIfEmpty()
+                                  join pass in _context.PassportInformations on a.ApplicationNumber equals pass.ApplicationNumber into passa
+                                  from pass in passa.DefaultIfEmpty()
+                                  join n in _context.Nationalities on g.NationalityId equals n.NationalityId into ng
+                                  from n in ng.DefaultIfEmpty()
+                                  where a.ApplicationStatusId != 5 && a.ApplicationStatusId != 6  // <== where applications is pending status
+                                  select new
+                                  {
+                                      a.ApplicationNumber,
+                                      a.ApplicationDate,
+                                      a.Remark,
+                                      a.ApplicationStatusId,
+                                      a.ApplicationTypeId,
+                                      a.StepNo,
+                                      a.IsActive,
+                                      a.UserId,
+                                      b.ApplicationTypeName,
+                                      c.ApplicationStatusName,
+                                      d.StepName,
+                                      n.NationalityName,
+                                      pass.PassportNumber,
+                                      pass.IssueDate,
+                                      pass.ExpiryDate,
+                                      p.JobTitle,
+                                      p.BirthDate,
+                                      CivilId = g.IsSapUser == true ? e.CivilId : f.CivilId,
+                                      UserName = g.IsSapUser == true ? e.EmployeeName : f.EmployeeName
+                                  };
+            }
+          
+
+
+
+            if (UserApplication == null)
+            {
+                return NotFound();
+            }
+            return Ok(UserApplication);
+        }
+
+
+        [HttpGet("SearchList")]
+        public async Task<ActionResult> GetSearchApplicationList(int ApplicationNumber, int ApplicationTypeId, string CivilId, int ApplicationStatusId, string EmployeeName, DateTime FromDate, DateTime ToDate)
+        {
+            FromDate = FromDate == DateTime.MinValue ? new DateTime(1980, 1, 1) : FromDate;
+            ToDate = ToDate == DateTime.MinValue ? new DateTime(2050, 1, 1) : ToDate;
+            var UserApplication = from a in _context.UserApplications
+                                  join b in _context.ApplicationTypes on a.ApplicationTypeId equals b.ApplicationTypeId into ab
+                                  from b in ab.DefaultIfEmpty() // <== makes join left join
+                                  join c in _context.ApplicationStatuses on a.ApplicationStatusId equals c.ApplicationStatusId into ac
+                                  from c in ac.DefaultIfEmpty()
+                                  join d in _context.UserApplicationSteps on a.StepNo equals d.StepNo into ad
+                                  from d in ad.DefaultIfEmpty()
+                                  join e in _context.SapUsers on a.UserId equals e.UserId into ae
+                                  from e in ae.DefaultIfEmpty()
+                                  join f in _context.NonSapUsers on a.UserId equals f.UserId into af
+                                  from f in af.DefaultIfEmpty()
+                                  join g in _context.Users on a.UserId equals g.UserId into ag
+                                  from g in ag.DefaultIfEmpty()
+                                  join p in _context.PersonalInformations on  a.ApplicationNumber  equals    p.ApplicationNumber  into pa
+                                  from p in pa.DefaultIfEmpty()
+                                  join pass in _context.PassportInformations on  a.ApplicationNumber  equals  pass.ApplicationNumber  into passa
+                                  from pass in passa.DefaultIfEmpty()
+                                  join n in _context.Nationalities on g.NationalityId equals n.NationalityId into ng
+                                  from n in ng.DefaultIfEmpty()
+
+                                  where (ApplicationNumber!=0 ? a.ApplicationNumber == ApplicationNumber: a.ApplicationNumber!=0)  &&
+                                  (ApplicationTypeId!=0? a.ApplicationTypeId == ApplicationTypeId: a.ApplicationTypeId!=0) && 
+                                  (ApplicationStatusId!=0? a.ApplicationStatusId == ApplicationStatusId : a.ApplicationStatusId!=0) && 
+                                  (a.ApplicationDate >= FromDate && a.ApplicationDate.Date <= ToDate )&&
+                                  (g.IsSapUser == true ? (CivilId !="0" ? e.CivilId == CivilId: e.CivilId!="") : ((CivilId != "0" ? f.CivilId == CivilId :f.CivilId != "")) )&&
+                                  (g.IsSapUser == true ? (EmployeeName!= null?e.EmployeeName == EmployeeName: e.EmployeeName!="") : (EmployeeName!=null?f.EmployeeName == EmployeeName: f.EmployeeName!=""))
+                                  select new 
+                                  {
+                                      a.ApplicationNumber,
+                                      a.ApplicationDate,
+                                      a.Remark,
+                                      a.ApplicationStatusId,
+                                      a.ApplicationTypeId,
+                                      a.StepNo,
+                                      a.IsActive,
+                                      a.UserId,
+                                      b.ApplicationTypeName,
+                                      c.ApplicationStatusName,
+                                      d.StepName,
+                                      n.NationalityName,
+                                      pass.PassportNumber,
+                                      pass.IssueDate,
+                                      pass.ExpiryDate,
+                                      p.JobTitle,
+                                      p.BirthDate,
+                                      CivilId = g.IsSapUser == true ? e.CivilId : f.CivilId,
+                                      UserName = g.IsSapUser == true ? e.EmployeeName : f.EmployeeName
+                                  };
+
+
+
+            if (UserApplication == null)
+            {
+                return NotFound();
+            }
+            return Ok(UserApplication);
+        }
+
+        [HttpGet("GetActiveUserApplicationByUserID/{userId}")]
+        public async Task<ActionResult> GetActiveUserApplicationByUserID(int userId)
+        {
+           var UserApplication = _context.UserApplications.Where(
+                m => m.UserId == userId && m.ApplicationStatusId == 6).OrderBy(r=>r.ApplicationNumber).FirstOrDefault();
+
+
+            if (UserApplication == null)
+            {
+                return NotFound();
+            }
+
+            var resDTO = _mapper.Map<UserApplicationsDTO>(UserApplication);
+            return Ok(resDTO);
+
+        }
+
+        //Get Application details
+        [HttpGet("GetApplicationDetail/{ApplicationNumber}")]
+        public async Task<ActionResult> GetApplicationDetail(int ApplicationNumber)
+        {
+
+        var AppUserType = (from UA in _context.UserApplications
+        join U in _context.Users on UA.UserId equals U.UserId
+        where UA.ApplicationNumber == ApplicationNumber
+            select new UsersDTO
+            {
+                IsSapUser = U.IsSapUser
+            }).FirstOrDefault();
+        var IsSapUser = AppUserType.IsSapUser;
+
+        if (IsSapUser = true)
+        {
+            var AppDetails = (from UA in _context.UserApplications
+            join AS in _context.ApplicationStatuses on UA.ApplicationStatusId equals AS.ApplicationStatusId
+            join AT in _context.ApplicationTypes on UA.ApplicationTypeId equals AT.ApplicationTypeId
+            join U in _context.SapUsers on UA.UserId equals U.UserId
+            join US in _context.UserApplicationSteps on UA.StepNo equals US.StepNo
+            where UA.ApplicationNumber == ApplicationNumber
+            select new UserApplicationsDetailedDTO
+            {
+                ApplicationNumber = UA.ApplicationNumber,
+                EmployeeName = U.EmployeeName,
+                CivilId = U.CivilId,
+                ApplicationStatusId = AS.ApplicationStatusId,
+                ApplicationStatusName = AS.ApplicationStatusName,
+                ApplicationTypeId = AT.ApplicationTypeId,
+                ApplicationTypeName = AT.ApplicationTypeName,
+                StepNo =US.StepNo,
+                StepName = US.StepName,
+                Remark = UA.Remark,
+                IsActive = UA.IsActive,
+                ApplicationDate = UA.ApplicationDate
+            }).FirstOrDefault();
+            if (AppDetails == null)
+            {
+                return NotFound();
+            }
+
+            var resDTO = _mapper.Map<UserApplicationsDetailedDTO>(AppDetails);
+            return Ok(resDTO);
+        }
+        else
+        {
+            var AppDetails = (from UA in _context.UserApplications
+            join AS in _context.ApplicationStatuses on UA.ApplicationStatusId equals AS.ApplicationStatusId
+            join AT in _context.ApplicationTypes on UA.ApplicationTypeId equals AT.ApplicationTypeId
+            join U in _context.NonSapUsers on UA.UserId equals U.UserId
+            join US in _context.UserApplicationSteps on UA.StepNo equals US.StepNo
+            where UA.ApplicationNumber == ApplicationNumber
+            select new UserApplicationsDetailedDTO
+            {
+                ApplicationNumber = UA.ApplicationNumber,
+                EmployeeName = U.EmployeeName,
+                CivilId = U.CivilId,
+                ApplicationStatusId = AS.ApplicationStatusId,
+                ApplicationStatusName = AS.ApplicationStatusName,
+                ApplicationTypeName = AT.ApplicationTypeName,
+                StepNo = US.StepNo,
+                StepName = US.StepName,
+                Remark = UA.Remark,
+                IsActive = UA.IsActive,
+                ApplicationDate = UA.ApplicationDate
+            }).FirstOrDefault();
+            if (AppDetails == null)
+            {
+                return NotFound();
+            }
+            var resDTO = _mapper.Map<UserApplicationsDetailedDTO>(AppDetails);
+            return Ok(resDTO);
+        }
+
+        }
+
+        // PUT: api/UserApplication/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for
+        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutUser(int id, UserApplicationsDTO userapplication)
+        {
+            //if (id != userapplication.ApplicationNumber)
+            //{
+            //    return BadRequest();
+            //}
+
+            _context.Entry(_mapper.Map<UserApplication>(userapplication)).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!UserApplicationExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            //return NoContent();
+            return CreatedAtAction("GetUserApplication", new { id = userapplication.ApplicationNumber }, userapplication);
+        }
+
+        // POST: api/UserApplications
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for
+        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        [HttpPost]
+        public async Task<ActionResult<UserApplication>> PostUserApplication(UserApplicationsDTO userapplication)
+        {
+            UserApplication UserApplication_ = _mapper.Map<UserApplication>(userapplication);
+            _context.UserApplications.Add(UserApplication_);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetUserApplication", new { id = UserApplication_.ApplicationNumber }, UserApplication_);
+        }
+
+        // DELETE: api/UserApplications/5
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<UserApplication>> DeleteUserApplication(int id)
+        {
+            var userapplication = await _context.UserApplications.FindAsync(id);
+            if (userapplication == null)
+            {
+                return NotFound();
+            }
+
+            _context.UserApplications.Remove(userapplication);
+            await _context.SaveChangesAsync();
+            //return CreatedAtAction(, new { UserId = userapplication.UserId });
+            return this.RedirectToAction("GetUserApplicationsByUserId/UserId", new { UserId = userapplication.UserId });
+        }
+
+
+        private bool UserApplicationExists(int id)
+        {
+            return _context.UserApplications.Any(e => e.ApplicationNumber == id);
+        }
+
+        // PUT: api/UserApplication/status update
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for
+        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+
+
+        [HttpPut("{UserId}/{ApplicationNumber}/{StatusId}")]
+        public async Task<IActionResult> UpdateApplicationStatus(int UserId, int ApplicationNumber, int StatusId,string? Remark="")
+        {
+            ResponseRequest_ = new ResponseRequest();
+            // Query for a specific customer.
+            var App =
+                (from a in _context.UserApplications
+                 where a.UserId == UserId && a.ApplicationNumber == ApplicationNumber
+                 select a).FirstOrDefault();
+            if (App == null)
+            {
+                ResponseRequest_.Status = 0;
+                ResponseRequest_.Message = "يوجد خطاء فى تغير الحالة ";
+                ResponseRequest_.HasError = true;
+                return BadRequest(ResponseRequest_);
+            }
+            App.ApplicationStatusId = StatusId;
+            if (StatusId == 3)
+                App.Remark = Remark;
+
+            await _context.SaveChangesAsync();
+            ResponseRequest_.Status = 200;
+            ResponseRequest_.Message = "تم التعديل بنجاح";
+            ResponseRequest_.HasError = false;
+            return Ok(ResponseRequest_);
+        }
+
+        // GET: api/ApplicationType/ApplicationTypeId
+        [HttpGet("GetApplicationType/{ApplicationTypeId}")]
+        public async Task<ActionResult> GetApplicationType(int ApplicationTypeId)
+        {
+            var ApplicationType = await _context.ApplicationTypes.FindAsync(ApplicationTypeId);
+
+            if (ApplicationType == null)
+            {
+                return NotFound();
+            }
+            return Ok(ApplicationType);
+        }
+
+        // PUT: api/ApplicationType/status update
+        [HttpPut("UpdateApplicationTypeStatus/{ApplicationTypeId}/{IsActive}")]
+        public async Task<IActionResult> UpdateApplicationTypeStatus(int ApplicationTypeId, bool IsActive)
+        {
+            var App =
+            (from a in _context.ApplicationTypes
+             where a.ApplicationTypeId == ApplicationTypeId
+             select a).FirstOrDefault();
+
+            App.IsActive = IsActive;
+
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetApplicationType", new { ApplicationTypeId = App.ApplicationTypeId }, App);
+        }
+
+    }
+}

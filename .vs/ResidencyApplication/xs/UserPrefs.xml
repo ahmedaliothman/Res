@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{71B76F55-4682-453D-9657-1C8B8BE49656}|Default">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.ResidencyApplication.Services PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ResidencyApplication.Services/ClientApp/package.json">
+    <Files>
+      <File FileName="ResidencyApplication.Services/appsettings.json" Line="1" Column="1" />
+      <File FileName="ResidencyApplication.Services/ClientApp/package.json" Line="60" Column="5" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ResidencyApplication" expanded="True">
+            <Node name="ResidencyApplication.Services" expanded="True">
+              <Node name="ClientApp" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+</Properties>

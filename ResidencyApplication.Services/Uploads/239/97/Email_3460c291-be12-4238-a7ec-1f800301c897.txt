@@ -1,0 +1,192 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Net.Mail;
+using System.IO;
+
+namespace MinistryServicesGate.Utils
+{
+    /*
+IP address:  10.31.11.12 or 10.31.11.13
+Port number: 25
+Usernamer : eforms@awqaf.gov.kw
+Password :   P@ssw0rd2016     
+*/
+    public class Email
+    {
+        public static String Host = "10.31.11.30";
+       // public static String Sender = "esaad294@awqaf.gov.kw";
+        //public static String Reciever = "haider.meshal@gmail.com";
+        //public static String Reciever = "FDA@awqaf.gov.kw";
+        //public static String Host = "mail.awqaf.gov.kw";
+        public static String pass = "P@ssw0rd2016";
+        public static String Sender = "eforms@awqaf.gov.kw";
+        public static int Port = 25;
+
+        public static void send(String to,String subject, String body)
+        {
+            MailMessage mail = new MailMessage(Sender, to);
+            SmtpClient client = new SmtpClient();
+            client.Port = Email.Port;
+            client.DeliveryMethod = SmtpDeliveryMethod.Network;
+            client.EnableSsl = false;
+            client.Credentials = new System.Net.NetworkCredential(Sender, pass);
+            client.Host = Email.Host;
+            mail.Subject = subject;
+            mail.Body = body;
+            client.Send(mail);
+        }
+     
+        public static void send(String to, String subject, String body, List<HttpPostedFileBase> UploadedFiles)
+        {
+            MailMessage mail = new MailMessage(Sender, to);
+            SmtpClient client = new SmtpClient();
+            client.Port = Email.Port;
+            client.DeliveryMethod = SmtpDeliveryMethod.Network;
+            client.EnableSsl = false;
+            client.Credentials = new System.Net.NetworkCredential(Sender, pass);
+            client.Host = Email.Host;
+            mail.Subject = subject;
+            mail.Body = body;
+            foreach (var file in UploadedFiles)
+            {
+                if (file != null && file.ContentLength > 0)
+                {
+                    try
+                    {
+                        string fileName = Path.GetFileName(file.FileName);
+                        var attachment = new Attachment(file.InputStream, fileName);
+                        mail.Attachments.Add(attachment);
+                    }
+                    catch (Exception) { }
+                }
+            }
+            client.Send(mail);
+        }
+
+        public static void sendHTMLBody(String to, String subject, String body, List<HttpPostedFileBase> UploadedFiles)
+        {
+            MailMessage mail = new MailMessage(Sender, to);
+            mail.IsBodyHtml=true;
+            SmtpClient client = new SmtpClient();
+            client.Port = Email.Port;
+            client.DeliveryMethod = SmtpDeliveryMethod.Network;
+            client.EnableSsl = false;
+            client.Credentials = new System.Net.NetworkCredential(Sender, pass);
+            client.Host = Email.Host;
+            mail.Subject = subject;
+            mail.Body = body;
+            foreach (var file in UploadedFiles)
+            {
+                if (file != null && file.ContentLength > 0)
+                {
+                    try
+                    {
+                        string fileName = Path.GetFileName(file.FileName);
+                        var attachment = new Attachment(file.InputStream, fileName);
+                        mail.Attachments.Add(attachment);
+                    }
+                    catch (Exception) { }
+                }
+            }
+            client.Send(mail);
+        }
+        //Newly created this
+        public static void sendHTMLBody(String to, String subject, String body, String fileName1)
+        {
+            MailMessage mail = new MailMessage(Sender, to);
+            mail.IsBodyHtml = true;
+            SmtpClient client = new SmtpClient();
+            client.Port = Email.Port;
+            client.DeliveryMethod = SmtpDeliveryMethod.Network;
+            client.EnableSsl = false;
+            client.Credentials = new System.Net.NetworkCredential(Sender, pass);
+            client.Host = Email.Host;
+            mail.Subject = subject;
+            mail.Body = body;
+
+                if (fileName1 != null)
+                {
+                    try
+                    {
+                    var attachment1 = new Attachment(fileName1);
+                    mail.Attachments.Add(attachment1);
+                    }
+                    catch (Exception) { }
+                }          
+            client.Send(mail);
+        }
+
+        public static void sendHTMLBody(String to, String subject, String body)
+        {
+            try
+            {
+                MailMessage mail = new MailMessage(Sender, to);
+                mail.IsBodyHtml = true;
+                SmtpClient client = new SmtpClient();
+                client.Port = Email.Port;
+                client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                client.EnableSsl = false;
+                client.Credentials = new System.Net.NetworkCredential(Sender, pass);
+                client.Host = Email.Host;
+                mail.Subject = subject;
+                mail.Body = body;
+                client.Send(mail);
+            }
+            catch (Exception e)
+            {
+                String error = e.ToString();
+            }
+        }
+
+
+        public static void sendHTMLBody(String to, String subject, String body,String fileName, Stream fileStream)
+        {
+            MailMessage mail = new MailMessage(Sender, to);
+            mail.IsBodyHtml = true;
+            SmtpClient client = new SmtpClient();
+            client.Port = Email.Port;
+            client.DeliveryMethod = SmtpDeliveryMethod.Network;
+            client.EnableSsl = false;
+            client.Credentials = new System.Net.NetworkCredential(Sender, pass);
+            client.Host = Email.Host;
+            mail.Subject = subject;
+            mail.Body = body;
+            var attachment = new Attachment(fileStream, fileName);
+            mail.Attachments.Add(attachment);
+            client.Send(mail);
+        }
+
+        //Newly Created for foreign relation ship request
+        public static void send(String to, String subject, String body, List<HttpPostedFileBase> UploadedFiles, String fileName1, Stream fileStream)
+        {
+            MailMessage mail = new MailMessage(Sender, to);
+            mail.IsBodyHtml = true;
+            SmtpClient client = new SmtpClient();
+            client.Port = Email.Port;
+            client.DeliveryMethod = SmtpDeliveryMethod.Network;
+            client.EnableSsl = false;
+            client.Credentials = new System.Net.NetworkCredential(Sender, pass);
+            client.Host = Email.Host;
+            mail.Subject = subject;
+            mail.Body = body;
+            var attachment1 = new Attachment(fileStream, fileName1);
+            mail.Attachments.Add(attachment1);
+            foreach (var file in UploadedFiles)
+            {
+                if (file != null && file.ContentLength > 0)
+                {
+                    try
+                    {
+                        string fileName = Path.GetFileName(file.FileName);
+                        var attachment = new Attachment(file.InputStream, fileName);
+                        mail.Attachments.Add(attachment);
+                    }
+                    catch (Exception) { }
+                }
+            }
+            client.Send(mail);
+        }
+    }
+}
